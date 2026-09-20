@@ -1,29 +1,96 @@
-# Welcome to your Lovable project
+# Premium Finance & Analytics Portfolio
 
-This project was built with [Lovable](https://lovable.dev).
+A frontend-only, placeholder-first portfolio for an MBA/PGDM student focused on finance, analytics, consulting, risk, FinTech, and corporate finance. No personal facts are invented: replace the bracketed values with your own information.
 
-## Build with Lovable
+## 1. Run locally
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```bash
+bun install
+bun run dev
 ```
 
-## Built with
+Open the local address shown in the terminal. Create a production build with `bun run build`.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## 2. Project structure
+
+- `src/data/` — all editable personal content and TypeScript structures
+- `src/components/` — reusable presentation sections and controls
+- `src/pages/` — home, project detail, and poem reading compositions
+- `src/routes/` — URL definitions and page metadata
+- `src/config/` — non-personal site settings
+- `src/styles.css` — color, typography, spacing, motion, and responsive system
+- `public/` — resume, favicon, and static hosting helpers
+
+## 3. Personal information
+
+Start with `src/data/profile.ts`. It controls your name, monogram, photo, headline, introduction, role interests, availability, contact links, highlights, About copy, section titles, footer line, and default SEO text.
+
+Every placeholder is intentionally bracketed. Search the project for `[` to find content still awaiting replacement.
+
+## 4. Experience
+
+Edit `src/data/experience.ts`. Add, remove, or reorder objects in the `experience` array. Set `type` to `work` or `internship`; the interface automatically separates the two timelines. Contributions, tools, achievements, and metrics are arrays and can contain any number of items.
+
+## 5. Projects
+
+Edit `src/data/projects.ts`. Each object automatically creates a home-page card and `/projects/<slug>` case study. Keep every `slug` unique and URL-safe. Use one of the defined categories so filtering works. Set `featured: true` for the emphasized treatment. Add as many projects as needed.
+
+## 6. Education and certifications
+
+Edit `src/data/education.ts`. Education and certifications are separate arrays. Add coursework and academic highlights as array items.
+
+## 7. Skills
+
+Edit `src/data/skills.ts`. Skills are grouped into Finance, Analytics, Technology, Business, Consulting, and Risk. Plain text is intentional; there are no artificial ratings.
+
+## 8. Achievements
+
+Edit `src/data/achievements.ts`. Add or remove achievement objects freely; the layout adapts.
+
+## 9. Hobbies and interests
+
+Edit `src/data/beyondWork.ts`. `size` accepts `small`, `wide`, or `tall`. Images are optional.
+
+## 10. Poems
+
+Edit `src/data/poems.ts`. Each poem creates `/writing/<slug>`. Preserve stanza breaks using blank lines inside the body string. Optional `hindi`, `urdu`, and `translation` fields display only when present. Urdu automatically renders right-to-left.
+
+## 11. Photograph and other images
+
+Place your image in `src/assets/`, import it in the relevant data file, and assign the imported value to `photo` or `image`. Leaving the value empty keeps the neutral placeholder. Always update the matching alt text where applicable.
+
+## 12. Resume
+
+Place your real PDF at `public/resume.pdf`. The buttons already link to `/resume.pdf`. Delete `public/resume.pdf.txt` after adding the actual file. This repository intentionally does not contain a fake resume.
+
+## 13. Accent color
+
+In `src/styles.css`, change `--accent-brand` in `:root`. The default is deep teal in OKLCH. Related soft treatments use `--accent-soft`.
+
+## 14. Fonts
+
+Font family tokens are in `src/styles.css`: `--font-sans` and `--font-serif`. Font loading links are in `src/routes/__root.tsx`. Update both places when changing fonts. The default pair is Geist and Newsreader, with Noto families for Hindi and Urdu.
+
+## 15. Add or remove sections
+
+Content-only changes belong in `src/data/`. To remove a whole section, remove its import/render from `src/pages/HomePage.tsx` and its item from `src/data/navigation.ts`. Keep section IDs and navigation IDs aligned.
+
+## 16. Deployment
+
+Run `bun run build`, then connect the repository to Vercel, Netlify, Cloudflare Pages, or GitHub Pages. This project uses TanStack Start's file-based routing. Lovable/Vercel/Cloudflare adapters handle deep links directly. `public/404.html` and `.nojekyll` provide the common GitHub Pages redirect fallback; configure the host's output/build settings according to its TanStack Start guide.
+
+## 17. Deep-link routing
+
+Project and poem URLs are real typed routes, not hash-based pages. Route files are `src/routes/projects.$slug.tsx` and `src/routes/writing.$slug.tsx`. Do not edit `src/routeTree.gen.ts`; it is generated automatically. For static-only hosts, configure all unknown document requests to serve the application entry. The included GitHub Pages helper redirects unknown paths to `/`.
+
+## 18. Contact form provider
+
+The current form intentionally sends nothing and shows a clear demo state. To connect Formspree, Web3Forms, or another provider later, add its endpoint to the form submission handler in `src/components/Contact.tsx`, submit with `fetch`, handle loading/error/success states, and never commit a private API key. Provider-specific public form IDs may live in environment variables.
+
+## SEO and social sharing
+
+Default metadata lives in `src/data/profile.ts`; project and poem routes derive metadata from their data objects. Add a real, absolute HTTPS Open Graph image URL only after you have an actual image that appears on the page. Replace `public/favicon.ico` with your own favicon.
+
+## Accessibility and motion
+
+The site includes semantic sections, a skip link, visible focus states, keyboard-accessible navigation, proper Urdu direction, reduced-motion support, and mobile menu scroll locking. Recheck contrast and alt text after replacing colors and images.

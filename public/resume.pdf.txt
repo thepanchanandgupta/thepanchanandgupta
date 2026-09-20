@@ -1,0 +1,4 @@
+PLACEHOLDER ONLY
+
+Add your real resume as public/resume.pdf, then delete this instructional file.
+The website Resume links already point to /resume.pdf.
