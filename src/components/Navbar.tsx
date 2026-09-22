@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Menu, X } from "lucide-react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { useRouterState } from "@tanstack/react-router";
 import { navigation } from "@/data/navigation";
 import { profile } from "@/data/profile";
 import { Button } from "./Button";
@@ -15,7 +15,7 @@ export function Navbar() {
   return <header className="site-header"><nav className="navbar" aria-label="Primary navigation">
     <a className="brand" href={destination("home")} onClick={() => setOpen(false)} aria-label="Home"><span>{profile.monogram}</span><strong>{profile.name}</strong></a>
     <div className="desktop-nav">{navigation.map(item => <a key={item.id} href={destination(item.id)} className={active === item.id ? "active" : ""}>{item.label}</a>)}</div>
-    <div className="nav-actions"><a className="icon-link" href={safeHref(profile.linkedin)} aria-label="LinkedIn"><Linkedin /></a><a className="icon-link" href={safeHref(profile.github)} aria-label="GitHub"><Github /></a><a className="resume-link" href={profile.resume}>Resume</a><Button variant="icon" className="menu-trigger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>
+    <div className="nav-actions"><a className="icon-link" href={safeHref(profile.linkedin)} target="_blank" rel="noreferrer" aria-label="LinkedIn professional profile"><Linkedin /></a><a className="icon-link technical-link" href={safeHref(profile.github)} target="_blank" rel="noreferrer" aria-label="GitHub technical work"><Github /></a><a className="resume-link" href={profile.resume}>Resume</a><Button variant="icon" className="menu-trigger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>
     {open && <div className="mobile-menu">{navigation.map((item, i) => <a key={item.id} href={destination(item.id)} onClick={() => setOpen(false)}><span>{String(i + 1).padStart(2, "0")}</span>{item.label}</a>)}<div className="mobile-social"><a href={safeHref(profile.linkedin)}><Linkedin /> LinkedIn</a><a href={safeHref(profile.github)}><Github /> GitHub</a><a href={profile.resume}>Resume</a></div></div>}
   </nav></header>;
 }
