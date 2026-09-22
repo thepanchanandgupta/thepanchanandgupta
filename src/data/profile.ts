@@ -1,17 +1,18 @@
 import type { Profile } from "./types";
 
 export const profile: Profile = {
-  name: "[YOUR NAME]",
-  monogram: "YN",
+  name: "Panchanand Gupta",
+  monogram: "PG",
   photo: "",
-  eyebrow: "Finance × Analytics × Technology",
+  eyebrow: "Technology × Data × Finance × Analytics",
   tagline: "[YOUR TAGLINE]",
   intro: "[YOUR 1–2 LINE PROFESSIONAL INTRO]",
   availability: "[YOUR AVAILABILITY]",
   targetRoles: ["[TARGET ROLE]", "[TARGET ROLE]", "[TARGET ROLE]"],
-  email: "[YOUR EMAIL]",
-  linkedin: "[YOUR LINKEDIN URL]",
-  github: "[YOUR GITHUB URL]",
+  email: "thepanchanandgupta@gmail.com",
+  academicEmail: "panchanand.pgdm27g@greatlakes.edu.in",
+  linkedin: "https://www.linkedin.com/in/thepanchanandgupta/",
+  github: "https://github.com/thepanchanandgupta/",
   resume: "/resume.pdf",
   highlights: [
     { value: "[X]", label: "Projects", note: "[FOCUS AREA]" },
@@ -47,9 +48,9 @@ export const profile: Profile = {
   writingTitle: "Between Numbers & Words",
   footerLine: "Built with curiosity.",
   seo: {
-    title: "[YOUR NAME] — Finance, Analytics & Technology",
+    title: "Panchanand Gupta — Technology, Analytics & Finance",
     description: "[YOUR PROFESSIONAL PORTFOLIO META DESCRIPTION]",
-    ogTitle: "[YOUR NAME] — Professional Portfolio",
+    ogTitle: "Panchanand Gupta — Professional Portfolio",
     ogDescription: "[YOUR OPEN GRAPH DESCRIPTION]",
     ogImage: "",
     twitterCard: "summary_large_image",
