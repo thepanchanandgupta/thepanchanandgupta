@@ -23,7 +23,7 @@ Open the local address shown in the terminal. Create a production build with `bu
 
 ## 3. Personal information
 
-Start with `src/data/profile.ts`. It controls your name, monogram, photo, headline, introduction, role interests, availability, contact links, highlights, About copy, section titles, footer line, and default SEO text.
+Start with `src/data/profile.ts`. It controls your name, monogram, photo, headline, introduction, role interests, availability, personal and academic emails, contact links, highlights, About copy, section titles, footer line, and default SEO text.
 
 Every placeholder is intentionally bracketed. Search the project for `[` to find content still awaiting replacement.
 
@@ -94,3 +94,7 @@ Default metadata lives in `src/data/profile.ts`; project and poem routes derive 
 ## Accessibility and motion
 
 The site includes semantic sections, a skip link, visible focus states, keyboard-accessible navigation, proper Urdu direction, reduced-motion support, and mobile menu scroll locking. Recheck contrast and alt text after replacing colors and images.
+
+## Verified contact details
+
+The current profile configuration includes Panchanand Gupta's verified name, personal email, Great Lakes academic email, LinkedIn, and GitHub. The personal email is the default contact address; the academic address is displayed and copied separately.
