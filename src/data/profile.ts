@@ -1,9 +1,10 @@
 import type { Profile } from "./types";
+import portraitAsset from "@/assets/panchanand-gupta-portrait.jpeg.asset.json";
 
 export const profile: Profile = {
   name: "Panchanand Gupta",
   monogram: "PG",
-  photo: "",
+  photo: portraitAsset.url,
   eyebrow: "Technology × Data × Finance × Analytics",
   tagline: "[YOUR TAGLINE]",
   intro: "[YOUR 1–2 LINE PROFESSIONAL INTRO]",
