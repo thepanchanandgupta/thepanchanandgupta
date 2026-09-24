@@ -57,15 +57,15 @@ Edit `src/data/poems.ts`. Each poem creates `/writing/<slug>`. Preserve stanza b
 
 ## 11. Photograph and other images
 
-Place your image in `src/assets/`, import it in the relevant data file, and assign the imported value to `photo` or `image`. Leaving the value empty keeps the neutral placeholder. Always update the matching alt text where applicable.
+The profile photograph is stored as a CDN asset pointer at `src/assets/panchanand-gupta-portrait.jpeg.asset.json` and connected in `src/data/profile.ts`. To replace it, create a new asset pointer, update that import, and keep the descriptive alt text accurate. Leaving `photo` empty restores the neutral placeholder.
 
 ## 12. Resume
 
 Place your real PDF at `public/resume.pdf`. The buttons already link to `/resume.pdf`. Delete `public/resume.pdf.txt` after adding the actual file. This repository intentionally does not contain a fake resume.
 
-## 13. Accent color
+## 13. Visual system and colors
 
-In `src/styles.css`, change `--accent-brand` in `:root`. The default is deep teal in OKLCH. Related soft treatments use `--accent-soft`.
+The visual identity lives in `src/styles.css`. Its reusable OKLCH tokens include `--surface-dark`, `--surface-deep`, `--accent-data`, and `--accent-finance`, plus the `--gradient-base`, `--gradient-tech`, and `--gradient-finance` treatments. Change these tokens rather than individual section colors to preserve the technology, analytics, finance, and editorial hierarchy.
 
 ## 14. Fonts
 
