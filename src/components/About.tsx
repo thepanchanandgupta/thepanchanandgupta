@@ -3,5 +3,62 @@ import { profile } from "@/data/profile";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-const labels = { professionalIdentity: "Professional identity", academicBackground: "Academic background", careerInterests: "Career interests", enjoysWorkingOn: "What I enjoy working on", personalInterests: "Personal interests" };
-export function About() { return <section id="about" className="section"><div className="container"><SectionHeading index="01" eyebrow="About" title={profile.sectionTitles.about} intro="The connecting thread between my academic interests, professional direction, and the questions I care about."/><div className="about-grid"><Reveal><div className="about-portrait"><ImagePlaceholder src={profile.photo} alt={`${profile.name}, professional portrait`} label="[YOUR PHOTO]" monogram={profile.monogram}/></div></Reveal><div className="about-copy">{Object.entries(profile.about).map(([key, value], i) => <Reveal key={key} delay={i * 50}><div className="about-block"><span>{labels[key as keyof typeof labels]}</span><p>{value}</p></div></Reveal>)}</div></div><div className="about-extras"><div><h3>Currently exploring</h3><div className="explore-grid">{profile.exploring.map(item => <article key={item.label}><span>{item.label}</span><p>{item.value}</p><ArrowUpRight /></article>)}</div></div><div className="target-panel"><h3>Target roles</h3><div className="role-list">{profile.targetRoles.map((role, index) => <span key={`${role}-${index}`}>{role}</span>)}</div></div></div></div></section>; }
+
+const labels = {
+  professionalIdentity: "Professional identity",
+  academicBackground: "Academic background",
+  careerInterests: "Career interests",
+  enjoysWorkingOn: "What I enjoy working on",
+  personalInterests: "Personal interests",
+};
+
+export function About() {
+  return (
+    <section id="about" className="section">
+      <div className="container">
+        <SectionHeading
+          index="01"
+          eyebrow="About"
+          title={profile.sectionTitles.about}
+          intro="The connecting thread between my academic interests, professional direction, and the questions I care about."
+        />
+        <div className="about-grid">
+          <Reveal>
+            <div className="about-portrait">
+              <ImagePlaceholder
+                src={profile.photo}
+                alt={`${profile.name}, professional portrait`}
+                label="Professional portrait"
+                monogram={profile.monogram}
+              />
+            </div>
+          </Reveal>
+          <div className="about-copy">
+            {Object.entries(profile.about).map(([key, value], i) => (
+              <Reveal key={key} delay={i * 35}>
+                <div className="about-block">
+                  <span>{labels[key as keyof typeof labels]}</span>
+                  <p>{value}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+        <div className="about-extras about-extras-compact">
+          <div>
+            <h3>Currently exploring</h3>
+            <div className="explore-grid">
+              {profile.exploring.map((item) => (
+                <article key={item.label}>
+                  <span>{item.label}</span>
+                  <p>{item.value}</p>
+                  <ArrowUpRight />
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
