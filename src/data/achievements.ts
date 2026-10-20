@@ -1,6 +1,10 @@
 import type { Achievement } from "./types";
+
 export const achievements: Achievement[] = [
-  { title: "[ACHIEVEMENT TITLE]", organization: "[ORGANIZATION]", year: "[YEAR]", description: "[ACHIEVEMENT DESCRIPTION]" },
-  { title: "[ACHIEVEMENT TITLE]", organization: "[ORGANIZATION]", year: "[YEAR]", description: "[ACHIEVEMENT DESCRIPTION]" },
-  { title: "[ACHIEVEMENT TITLE]", organization: "[ORGANIZATION]", year: "[YEAR]", description: "[ACHIEVEMENT DESCRIPTION]" },
+  {
+    title: "Karma Yoga Award",
+    organization: "HCLTech",
+    year: "[YEAR]",
+    description: "[ADD THE OFFICIAL CITATION OR REASON FOR THE AWARD]",
+  },
 ];
