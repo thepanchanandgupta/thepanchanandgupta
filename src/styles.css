@@ -584,3 +584,51 @@ body {
     font-size: .78rem;
   }
 }
+
+
+/* About section: no portrait, no career-interest card, horizontal information */
+.about-grid {
+  display: block;
+}
+.about-copy-horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2.5rem;
+  align-items: start;
+}
+.about-copy-horizontal > * {
+  min-width: 0;
+}
+.about-copy-horizontal .about-block {
+  display: grid;
+  grid-template-columns: minmax(115px, .7fr) minmax(0, 1.5fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--border);
+}
+.about-copy-horizontal .about-block > span {
+  color: var(--accent-data);
+  font: 500 .66rem "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .035em;
+  padding-top: .35rem;
+}
+.about-copy-horizontal .about-block p {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .about-copy-horizontal {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (max-width: 560px) {
+  .about-copy-horizontal .about-block {
+    grid-template-columns: 1fr;
+    gap: .45rem;
+    padding: 1rem 0;
+  }
+}
