@@ -5,11 +5,11 @@ export const profile: Profile = {
   name: "Panchanand Gupta",
   monogram: "PG",
   photo: portraitAsset.url,
-  eyebrow: "Technology × Data × Analytics × Finance",
+  eyebrow: "Finance × Analytics × Business",
   tagline: "Turning technology and data into better business decisions.",
   intro:
     "PGDM candidate majoring in Finance and Analytics, with a technology background and an interest in solving business problems through data, financial thinking, and digital solutions.",
-  availability: "Exploring consulting, FinTech, analytics, and finance opportunities",
+  availability: "Open to finance, analytics, and business transformation opportunities",
   targetRoles: [
     "Technology Consulting",
     "Risk Consulting",
@@ -25,7 +25,6 @@ export const profile: Profile = {
     { value: "Technology", label: "Foundation", note: "Software and workflow thinking" },
     { value: "Finance", label: "Major", note: "Business and financial perspective" },
     { value: "Analytics", label: "Major", note: "Data-led problem solving" },
-    { value: "FinTech", label: "Direction", note: "Where the disciplines meet" },
   ],
   about: {
     professionalIdentity:
@@ -37,7 +36,7 @@ export const profile: Profile = {
     enjoysWorkingOn:
       "Translating ambiguous business questions into structured analysis, using data to find patterns, and applying technology to make workflows and decisions better.",
     personalInterests:
-      "Swimming, writing poetry, and exploring the relationship between logic, numbers, technology, and human behaviour.",
+      "Writing poetry and shayari, reading, swimming, cycling, and running half marathons.",
   },
   exploring: [
     { label: "Learning", value: "Financial analysis, risk, and applied analytics" },
