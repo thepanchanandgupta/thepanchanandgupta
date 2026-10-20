@@ -378,3 +378,209 @@ footer { position:relative; overflow:hidden; }
 @media(prefers-reduced-motion:reduce) {
   .analytical-grid svg,.analytical-grid circle { animation:none!important; }
 }
+
+
+/* Portfolio refinement: tighter typography, cleaner skills, and compact sections */
+:root {
+  --content: 1180px;
+}
+body {
+  font-size: 15px;
+  line-height: 1.58;
+}
+.section {
+  padding: 5.25rem 0;
+}
+.section-heading {
+  margin-bottom: 3rem;
+  grid-template-columns: 2fr 10fr;
+}
+.section-heading h2 {
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: .98;
+  max-width: 900px;
+}
+.section-heading > div:last-child p {
+  font-size: .92rem;
+  margin-top: .9rem;
+}
+.hero h1 {
+  font-size: clamp(3.6rem, 7vw, 7rem);
+}
+.hero-intro {
+  font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+}
+.status-line-compact {
+  margin-top: 2.5rem;
+}
+.about-extras-compact {
+  grid-template-columns: 1fr;
+  margin-top: 2.5rem;
+}
+.education-layout-compact {
+  gap: 3rem;
+  grid-template-columns: minmax(0, 8fr) minmax(220px, 4fr);
+}
+.education-layout-compact .education-list > article {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.education-layout-compact .education-list h3 {
+  font-size: 1.55rem;
+  margin: .35rem 0;
+}
+.education-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: .8rem;
+  padding-top: .65rem;
+  font-size: .8rem;
+}
+.education-summary strong {
+  font-weight: 600;
+}
+.certifications-compact article {
+  padding: .85rem 0;
+}
+.certifications-compact h4 {
+  margin: .2rem 0;
+  font-size: 1rem;
+}
+.skills-grid-compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  border: 0;
+}
+.skills-grid-compact article {
+  min-height: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--dark-line);
+  border-radius: 6px;
+}
+.skills-grid-compact h3 {
+  margin: 1.1rem 0 .8rem;
+  font-size: 1.45rem;
+}
+.skills-grid-compact article div p {
+  padding: .45rem 0;
+  font-size: .78rem;
+}
+.personal-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding-top: .25rem;
+}
+.personal-interests span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: .65rem 1rem;
+  border: 1px solid var(--dark-line);
+  border-radius: 999px;
+  color: oklch(.9 .02 190);
+  background: oklch(.17 .03 200 / .72);
+  font-size: .85rem;
+}
+.timeline-group {
+  margin-top: 2.5rem;
+}
+.timeline-group > h3 {
+  font-size: .9rem;
+  letter-spacing: .12em;
+}
+.timeline-item {
+  grid-template-columns: 60px minmax(0, 1fr);
+}
+.timeline-content {
+  padding: 0 0 2.25rem 2rem;
+}
+.timeline-content h4 {
+  font-size: clamp(1.7rem, 2.4vw, 2.25rem);
+  line-height: 1.15;
+  margin: .45rem 0 .2rem;
+}
+.timeline-content > p:not(.timeline-org) {
+  margin: .5rem 0;
+  font-size: .88rem;
+}
+.contribution-list li {
+  padding-block: .45rem;
+  font-size: .83rem;
+}
+.result-row {
+  margin-top: .7rem;
+}
+.project-card .project-flow {
+  font-size: .72rem;
+}
+.project-card-body {
+  padding: 1.2rem;
+}
+.project-card h3 {
+  font-size: 1.65rem;
+}
+.bento-grid {
+  display: block;
+}
+.bento-grid article {
+  display: block;
+}
+.bento-image {
+  display: none;
+}
+.bento-grid article > div:last-child {
+  padding: 0;
+}
+.bento-grid h3 {
+  margin: .35rem 0;
+}
+.bento-grid p {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .section {
+    padding: 4.25rem 0;
+  }
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    margin-bottom: 2.25rem;
+  }
+  .skills-grid-compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .education-layout-compact {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-heading h2 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+  }
+  .skills-grid-compact {
+    grid-template-columns: 1fr;
+  }
+  .timeline-item {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+  .timeline-content {
+    padding-left: 1rem;
+  }
+  .timeline-meta {
+    gap: .6rem;
+    flex-wrap: wrap;
+  }
+  .personal-interests {
+    gap: .5rem;
+  }
+  .personal-interests span {
+    font-size: .78rem;
+  }
+}
