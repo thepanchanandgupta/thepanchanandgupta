@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Award, BookOpen, GraduationCap } from "lucide-react";
 import { achievements } from "@/data/achievements";
-import { beyondWork } from "@/data/beyondWork";
 import { certifications, education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { poems } from "@/data/poems";
