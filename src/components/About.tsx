@@ -1,18 +1,20 @@
 import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
-import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 const labels = {
   professionalIdentity: "Professional identity",
   academicBackground: "Academic background",
-  careerInterests: "Career interests",
   enjoysWorkingOn: "What I enjoy working on",
   personalInterests: "Personal interests",
 };
 
 export function About() {
+  const aboutEntries = Object.entries(profile.about).filter(
+    ([key]) => key !== "careerInterests",
+  );
+
   return (
     <section id="about" className="section">
       <div className="container">
@@ -22,27 +24,15 @@ export function About() {
           title={profile.sectionTitles.about}
           intro="The connecting thread between my academic interests, professional direction, and the questions I care about."
         />
-        <div className="about-grid">
-          <Reveal>
-            <div className="about-portrait">
-              <ImagePlaceholder
-                src={profile.photo}
-                alt={`${profile.name}, professional portrait`}
-                label="Professional portrait"
-                monogram={profile.monogram}
-              />
-            </div>
-          </Reveal>
-          <div className="about-copy">
-            {Object.entries(profile.about).map(([key, value], i) => (
-              <Reveal key={key} delay={i * 35}>
-                <div className="about-block">
-                  <span>{labels[key as keyof typeof labels]}</span>
-                  <p>{value}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        <div className="about-copy about-copy-horizontal">
+          {aboutEntries.map(([key, value], i) => (
+            <Reveal key={key} delay={i * 35}>
+              <article className="about-block">
+                <span>{labels[key as keyof typeof labels]}</span>
+                <p>{value}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
         <div className="about-extras about-extras-compact">
           <div>
