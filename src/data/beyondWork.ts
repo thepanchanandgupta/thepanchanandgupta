@@ -1,7 +1,25 @@
 import type { BeyondWorkItem } from "./types";
+
 export const beyondWork: BeyondWorkItem[] = [
-  { category: "Hobbies", title: "[YOUR HOBBY]", description: "[WHY THIS MATTERS TO YOU]", image: "", size: "tall" },
-  { category: "Reading", title: "[YOUR READING INTEREST]", description: "[WHAT YOU ENJOY READING]", image: "", size: "wide" },
-  { category: "Music", title: "[YOUR MUSIC INTEREST]", description: "[A SHORT PERSONAL NOTE]", image: "", size: "small" },
-  { category: "Other Interests", title: "[YOUR INTEREST]", description: "[A SHORT PERSONAL NOTE]", image: "", size: "small" },
+  {
+    category: "Sports",
+    title: "Swimming",
+    description: "A sport and personal interest.",
+    image: "",
+    size: "tall",
+  },
+  {
+    category: "Writing",
+    title: "Hindi thoughts & poetry",
+    description: "Original short-form writing that explores psychology, emotion, and perspective.",
+    image: "",
+    size: "wide",
+  },
+  {
+    category: "Other Interests",
+    title: "Technology & finance",
+    description: "Exploring how data, technology, and financial thinking connect to real-world decisions.",
+    image: "",
+    size: "small",
+  },
 ];

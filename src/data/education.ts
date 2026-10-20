@@ -1,10 +1,35 @@
 import type { Certification, EducationEntry } from "./types";
+
 export const education: EducationEntry[] = [
-  { id: "mba", type: "PGDM / MBA", institution: "[YOUR UNIVERSITY]", degree: "[YOUR DEGREE]", specialization: "[YOUR SPECIALIZATION]", duration: "[START DATE] — [END DATE]", grade: "[CGPA / GRADE]", coursework: ["[RELEVANT COURSE]", "[RELEVANT COURSE]"], highlights: ["[ACADEMIC HIGHLIGHT]"] },
-  { id: "undergrad", type: "Undergraduate Degree", institution: "[YOUR UNIVERSITY]", degree: "[YOUR DEGREE]", specialization: "[YOUR SPECIALIZATION]", duration: "[START DATE] — [END DATE]", grade: "[CGPA / GRADE]", coursework: ["[RELEVANT COURSE]", "[RELEVANT COURSE]"], highlights: ["[ACADEMIC HIGHLIGHT]"] },
-  { id: "school", type: "School", institution: "[YOUR SCHOOL]", degree: "[QUALIFICATION]", specialization: "[SUBJECTS / STREAM]", duration: "[START DATE] — [END DATE]", grade: "[GRADE]", coursework: [], highlights: ["[ACADEMIC HIGHLIGHT]"] },
+  {
+    id: "mba",
+    type: "PGDM / MBA",
+    institution: "Great Lakes Institute of Management, Gurgaon",
+    degree: "Post Graduate Diploma in Management (PGDM)",
+    specialization: "Dual Major: Finance & Analytics",
+    duration: "2025 — 2027",
+    grade: "3.1 / 4.0 GPA (latest shared)",
+    coursework: [
+      "Financial Statement Analysis",
+      "Corporate Finance",
+      "Data Science & Analytics",
+      "Operations Management",
+      "Strategic Management",
+    ],
+    highlights: ["[ADD VERIFIED ACADEMIC HIGHLIGHTS]"],
+  },
+  {
+    id: "undergrad",
+    type: "Undergraduate Degree",
+    institution: "[UNDERGRADUATE INSTITUTION]",
+    degree: "B.Tech",
+    specialization: "Information Technology",
+    duration: "Completed 2022",
+    grade: "8.71 / 10 CGPA",
+    coursework: ["Software Development", "Programming", "Data Structures"],
+    highlights: ["[ADD VERIFIED ACADEMIC HIGHLIGHTS]"],
+  },
 ];
 export const certifications: Certification[] = [
-  { title: "[CERTIFICATION]", issuer: "[ISSUER]", year: "[YEAR]" },
   { title: "[CERTIFICATION]", issuer: "[ISSUER]", year: "[YEAR]" },
 ];
