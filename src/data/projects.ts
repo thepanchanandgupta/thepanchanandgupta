@@ -25,7 +25,7 @@ export const projects: Project[] = [
     tools: ["React", "TypeScript", "Python", "Financial Analysis", "Analytics"],
     github: "https://github.com/thepanchanandgupta/FINVISTA",
     liveDemo: "",
-    image: "",
+    image: "/picture/finvista-cover.jpeg",
     featured: true,
   },
   {
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     tools: ["n8n", "Analytics", "Claude AI", "Telegram"],
     github: "",
     liveDemo: "",
-    image: "",
+    image: "/picture/procurement-intelligence.jpeg",
     featured: true,
   },
   {
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     tools: ["Excel", "Portfolio Analytics", "Risk Analysis", "Dashboarding"],
     github: "https://github.com/thepanchanandgupta/Academics-FRA-1",
     liveDemo: "https://thepanchanandgupta.github.io/Academics-FRA-1/",
-    image: "",
+    image: "/picture/portfolio-risk-comparison.jpeg",
     featured: true,
   },
   {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     tools: ["Python", "Financial Statement Analysis", "Data Validation"],
     github: "https://github.com/thepanchanandgupta/FINVISTA",
     liveDemo: "",
-    image: "",
+    image: "/picture/financial-analysis.jpeg",
     featured: false,
   },
 ];
