@@ -3,26 +3,26 @@ import type { SkillGroup } from "./types";
 export const skillGroups: SkillGroup[] = [
   {
     category: "Finance",
-    skills: ["Financial Statement Analysis", "Corporate Finance", "Portfolio Risk Analysis", "Valuation Fundamentals"],
+    skills: ["Financial Statement Analysis", "Corporate Finance", "Valuation Fundamentals", "Portfolio Risk Analysis"],
   },
   {
     category: "Analytics",
-    skills: ["Python", "SQL", "Power BI", "Excel", "Tableau", "Alteryx", "Qlik Sense"],
+    skills: ["SQL", "Python", "Power BI", "Excel", "Tableau"],
   },
   {
-    category: "Technology",
-    skills: ["React", "TypeScript", "REST APIs", "Workflow Automation", "PostgreSQL"],
+    category: "Tools & Technologies",
+    skills: ["PostgreSQL", "Alteryx", "Qlik Sense", "Postman", "Workflow Automation"],
   },
   {
-    category: "Business",
-    skills: ["Business Analysis", "Process Improvement", "KPI Reporting", "Data Storytelling"],
+    category: "Business Skills",
+    skills: ["Business Analysis", "Process Improvement", "KPI Reporting", "Financial Modelling"],
   },
   {
     category: "Consulting",
-    skills: ["Structured Problem Solving", "Process Analysis", "Requirements Thinking"],
+    skills: ["Structured Problem Solving", "Requirements Analysis", "Stakeholder Communication"],
   },
   {
-    category: "Risk",
-    skills: ["Risk Profiling", "Financial Risk Analysis", "Data Quality Checks"],
+    category: "Risk & Quality",
+    skills: ["Financial Risk Analysis", "Risk Profiling", "Data Quality Checks"],
   },
 ];
