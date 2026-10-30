@@ -24,7 +24,6 @@ function FinvistaDetail({ project, previous, next }: { project: Project; previou
           <p className="finvista-lede">An AI-assisted finance platform bringing company diagnostics, valuation, investor risk profiling and portfolio analytics into one decision-support workspace.</p>
           <div className="finvista-actions">
             <a className="finvista-primary-link" href="https://finvista-demo.onrender.com/" target="_blank" rel="noreferrer"><ExternalLink /> Open live demo <ArrowUpRight /></a>
-            <a className="finvista-secondary-link" href={project.github} target="_blank" rel="noreferrer"><Github /> Source code <ArrowUpRight /></a>
           </div>
         </div>
       </header>
