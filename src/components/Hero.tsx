@@ -1,6 +1,7 @@
 import { ArrowDownRight, Github, Linkedin } from "lucide-react";
 import { profile } from "@/data/profile";
 import { ImagePlaceholder } from "./ImagePlaceholder";
+import { Reveal } from "./Reveal";
 
 const safeHref = (value: string) => (value.startsWith("[") ? "#" : value);
 
@@ -22,7 +23,7 @@ export function Hero() {
         <span className="data-label data-c">INSIGHT → DECISIONS</span>
       </div>
       <div className="container hero-grid">
-        <div className="hero-copy">
+        <Reveal className="hero-copy">
           <p className="eyebrow">{profile.eyebrow}</p>
           <h1 id="hero-title">{profile.name}</h1>
           <p className="hero-intro">{profile.intro}</p>
@@ -44,15 +45,15 @@ export function Hero() {
               <strong>{profile.availability}</strong>
             </div>
           </div>
-        </div>
-        <div className="hero-portrait">
+        </Reveal>
+        <Reveal className="hero-portrait" delay={140}>
           <div className="portrait-frame">
             <span className="frame-code">PROFILE_001</span>
             <ImagePlaceholder src={profile.photo} alt={`${profile.name}, professional portrait`} label="Professional portrait" monogram={profile.monogram} />
             <span className="frame-axis">FINANCE / ANALYTICS</span>
           </div>
           <span className="portrait-caption">Business perspective / analytical thinking</span>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
