@@ -1344,3 +1344,21 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
   }
   #experience .result-row { grid-template-columns:1fr; gap:.3rem; }
 }
+
+/* Balance the two-column profile layout; avoid a short capabilities card beside a tall stack */
+.profile-overview-grid {
+  align-items:stretch;
+}
+.profile-overview-grid > .profile-capabilities {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.profile-overview-grid > .profile-capabilities .capability-list {
+  flex:1;
+  align-content:space-between;
+  grid-auto-rows:min-content;
+}
+@media(max-width:760px) {
+  .profile-overview-grid > .profile-capabilities { height:auto; }
+}
