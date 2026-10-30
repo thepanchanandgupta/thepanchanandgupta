@@ -1190,3 +1190,16 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
   .profile-overview-grid .education-compact article>div,
   .profile-overview-grid .profile-certifications article>div { align-items:flex-start; }
 }
+
+/* Let section titles and intros use the available desktop width */
+@media (min-width: 761px) {
+  .section-heading h2 {
+    max-width: none;
+    width: 100%;
+  }
+  .section-heading>div:last-child p,
+  .section-heading p {
+    max-width: none;
+    width: 100%;
+  }
+}
