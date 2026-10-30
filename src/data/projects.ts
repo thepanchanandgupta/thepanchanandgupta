@@ -79,7 +79,7 @@ export const projects: Project[] = [
     tools: ["Excel", "Portfolio Analytics", "Risk Analysis", "Dashboarding"],
     github: "https://github.com/thepanchanandgupta/Academics-FRA-1",
     liveDemo: "https://thepanchanandgupta.github.io/Academics-FRA-1/",
-    image: "/picture/portfolio-risk-comparison.jpeg",
+    image: "/picture/portfolio-risk-comparison.png",
     featured: true,
   },
   {
