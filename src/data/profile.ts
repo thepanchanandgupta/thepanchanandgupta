@@ -5,7 +5,7 @@ export const profile: Profile = {
   monogram: "PG",
   photo: "/picture/panchanand-gupta.jpeg",
   eyebrow: "Finance × Analytics × Business",
-  tagline: "Turning technology and data into better business decisions.",
+  tagline: "Building at the intersection of technology, finance and analytical thinking.",
   intro:
     "PGDM candidate majoring in Finance and Analytics, with a technology background and an interest in solving business problems through data, financial thinking, and digital solutions.",
   availability: "Open to finance, analytics, and business transformation opportunities",

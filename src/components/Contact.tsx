@@ -10,7 +10,7 @@ export function Contact() {
     <section id="contact" className="section contact-section">
       <div className="container">
         <SectionHeading
-          index="09"
+          index="05"
           eyebrow="Contact"
           title={profile.sectionTitles.contact}
           intro="For opportunities, collaborations, thoughtful conversations, or a shared interest in the work."
