@@ -1362,3 +1362,50 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
 @media(max-width:760px) {
   .profile-overview-grid > .profile-capabilities { height:auto; }
 }
+
+/* Capabilities should be content-height, not stretched to match the education stack */
+.profile-overview-grid {
+  align-items:start;
+}
+.profile-overview-grid > .profile-capabilities {
+  height:auto;
+  min-height:0;
+  display:block;
+}
+.profile-overview-grid > .profile-capabilities .capability-list {
+  flex:initial;
+  align-content:start;
+  grid-auto-rows:auto;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.1rem 1.25rem;
+}
+.profile-overview-grid .capability-list>div {
+  min-width:0;
+  padding:.45rem 0 0;
+  border-top:1px solid #dce2e9;
+}
+.profile-overview-grid .capability-list strong {
+  display:block;
+  margin-bottom:.35rem;
+  color:#1d2c45;
+  font-size:.74rem;
+}
+.profile-overview-grid .capability-list ul {
+  display:grid;
+  gap:.22rem;
+  margin:0;
+  padding-left:1rem;
+  list-style:disc;
+}
+.profile-overview-grid .capability-list li {
+  padding:0;
+  color:#657187;
+  font-size:.68rem;
+  line-height:1.45;
+}
+@media(max-width:760px) {
+  .profile-overview-grid .capability-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:480px) {
+  .profile-overview-grid .capability-list { grid-template-columns:1fr; }
+}
