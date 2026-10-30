@@ -1447,3 +1447,53 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
     gap:1rem;
   }
 }
+
+/* FINVISTA: compact product overview instead of a long, padded generic case-study template */
+.finvista-detail { padding-top:5.4rem; }
+.finvista-case-hero {
+  padding:2.2rem 0 2.5rem;
+  color:#eef2fa;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(102,132,205,.18),transparent 24rem),
+    #111d30;
+  border-bottom:1px solid rgba(190,207,237,.16);
+}
+.finvista-case-hero .back-link { margin-bottom:1.6rem; color:#aab8d0; }
+.finvista-case-hero .project-meta { display:flex; gap:.7rem; flex-wrap:wrap; color:#9cafff; font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; }
+.finvista-case-hero h1 {
+  margin:.75rem 0 0;
+  font-family:var(--font-sans);
+  font-size:clamp(2.8rem,6vw,4.5rem);
+  font-weight:700;
+  letter-spacing:-.065em;
+  line-height:.98;
+}
+.finvista-subtitle { margin:.25rem 0 0; color:#d5a17e; font-size:1rem; font-weight:600; }
+.finvista-lede { max-width:760px; margin:.8rem 0 0; color:#bdc9dc; font-size:.92rem; line-height:1.65; }
+.finvista-actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.25rem; }
+.finvista-actions a { display:inline-flex; align-items:center; gap:.5rem; padding:.62rem .9rem; border-radius:7px; font-size:.75rem; font-weight:600; text-decoration:none; transition:transform .2s ease,background .2s ease; }
+.finvista-actions a:hover { transform:translateY(-2px); }
+.finvista-actions svg { width:15px; height:15px; }
+.finvista-primary-link { color:#111d30; background:#9aafff; }
+.finvista-primary-link:hover { background:#b0beff; }
+.finvista-secondary-link { color:#e6ebf5; border:1px solid rgba(190,207,237,.25); }
+.finvista-secondary-link:hover { background:rgba(255,255,255,.07); }
+.finvista-case-content { padding-top:2rem; padding-bottom:2.4rem; }
+.finvista-section-label { color:#9a6a50; font:600 .64rem "JetBrains Mono",monospace; letter-spacing:.12em; }
+.finvista-module-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.2rem; margin-top:.9rem; }
+.finvista-module-grid article { padding:.85rem 0; border-top:1px solid #cfd7e2; }
+.finvista-module-grid h2 { margin:0 0 .35rem; color:#1c2b43; font-size:.92rem; font-weight:650; }
+.finvista-module-grid p { margin:0; color:#5f6c80; font-size:.75rem; line-height:1.55; }
+.finvista-build-row { display:flex; align-items:flex-end; justify-content:space-between; gap:1.5rem; margin-top:1.3rem; padding-top:1rem; border-top:1px solid #d8dee8; }
+.finvista-stack { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.55rem; }
+.finvista-stack span { color:#536078; font-size:.7rem; }
+.finvista-stack span:not(:last-child)::after { content:"·"; margin-left:.4rem; color:#b07a59; }
+.finvista-disclaimer { margin:0; color:#7d8797; font-size:.68rem; text-align:right; }
+@media(max-width:850px) { .finvista-module-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:560px) {
+  .finvista-detail { padding-top:4.8rem; }
+  .finvista-case-hero { padding:1.5rem 0 1.8rem; }
+  .finvista-module-grid { grid-template-columns:1fr; gap:.3rem; }
+  .finvista-build-row { align-items:flex-start; flex-direction:column; gap:.75rem; }
+  .finvista-disclaimer { text-align:left; }
+}
