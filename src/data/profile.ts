@@ -38,10 +38,10 @@ export const profile: Profile = {
       "Writing poetry and shayari, reading, swimming, cycling, and running half marathons.",
   },
   exploring: [
-    { label: "Learning", value: "Financial analysis, risk, and applied analytics" },
+    { label: "Focus Areas", value: "Financial analysis, risk management, and investment research" },
     { label: "Building", value: "FINVISTA — an AI-assisted finance and investment intelligence platform" },
     { label: "Experimenting", value: "Analytics-led workflow automation and decision support" },
-    { label: "Writing", value: "Original Hindi thoughts and poetry" },
+    { label: "Writing", value: "Original English and Hindi poetry and shayari" },
   ],
   sectionTitles: {
     home: "Technology-minded. Analytics-driven. Finance-focused.",
