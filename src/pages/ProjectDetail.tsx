@@ -183,13 +183,13 @@ function PortfolioRiskDetail({ project, previous, next }: { project: Project; pr
               <div className="finvista-section-label">DASHBOARD PREVIEW</div>
               <h2 id="portfolio-risk-evidence-title">Explore the analysis in detail</h2>
             </div>
-            <p>Dashboard preview images are illustrative. Open the interactive version to change portfolios, regimes and assumptions.</p>
+            <p>Open the interactive dashboard to explore portfolio performance, risk measures and market regimes.</p>
           </div>
           <figure className="portfolio-risk-preview">
             <a className="portfolio-risk-image-zoom" href={dashboard} target="_blank" rel="noreferrer" aria-label="Open the interactive portfolio risk dashboard in a new tab">
-              <img src="/picture/portfolio-risk-comparison.jpeg" alt="Preview of the High-Risk versus Low-Risk Portfolio Analysis dashboard" loading="lazy" />
+              <img src="/picture/portfolio-risk-comparison.png" alt="Portfolio risk comparison banner showing two portfolios across three market regimes" loading="lazy" />
             </a>
-            <figcaption>Portfolio dashboard overview · Hover to enlarge · Click to open the interactive dashboard ↗</figcaption>
+            <figcaption>Portfolio risk comparison · Click anywhere on the image to open the interactive dashboard ↗</figcaption>
           </figure>
           <div className="portfolio-risk-links">
             <a href={dashboard} target="_blank" rel="noreferrer">Open interactive dashboard <ArrowUpRight /></a>
