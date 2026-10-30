@@ -1861,3 +1861,10 @@ footer {
     justify-content: flex-start;
   }
 }
+
+
+/* Keep work and internship date ranges on one line */
+@media (min-width: 761px) {
+  #experience .timeline-item { grid-template-columns: 210px minmax(0, 1fr); gap: 1.25rem; }
+  #experience .timeline-period { white-space: nowrap; letter-spacing: .035em; font-size: .6rem; }
+}
