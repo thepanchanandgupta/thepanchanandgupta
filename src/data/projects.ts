@@ -5,7 +5,7 @@ export const projects: Project[] = [
     slug: "finvista",
     title: "FINVISTA — Finance & Investment Intelligence",
     description:
-      "An AI-assisted platform for financial diagnostics, valuation, risk profiling, and portfolio analytics.",
+      "An AI-assisted finance platform combining company diagnostics, valuation, investor risk profiling and portfolio analytics.",
     category: "FinTech",
     context:
       "Financial analysis often requires moving between company fundamentals, valuation, risk measures, and portfolio context.",
@@ -22,9 +22,9 @@ export const projects: Project[] = [
     ],
     impact:
       "Portfolio project and working demo; no unverified business outcomes or performance metrics are claimed.",
-    tools: ["React", "TypeScript", "Python", "Financial Analysis", "Analytics"],
+    tools: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Gemini API"],
     github: "https://github.com/thepanchanandgupta/FINVISTA",
-    liveDemo: "",
+    liveDemo: "https://finvista-demo.onrender.com/",
     image: "/picture/finvista-cover.jpeg",
     featured: true,
   },
