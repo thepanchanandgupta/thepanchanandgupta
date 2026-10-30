@@ -985,3 +985,24 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
   .impact-grid .impact-copy>strong { font-size:1.12rem; }
   .impact-grid .impact-copy>p { font-size:.68rem; }
 }
+
+/* Tighter rhythm for the currently-exploring grid */
+.explore-grid article {
+  min-height: 104px;
+  padding: .9rem 1.1rem;
+}
+.explore-grid p {
+  margin-top: .9rem;
+  line-height: 1.45;
+}
+.explore-grid svg {
+  right: .85rem;
+  top: .85rem;
+}
+@media (max-width: 640px) {
+  .explore-grid article {
+    min-height: 92px;
+    padding: .85rem 1rem;
+  }
+  .explore-grid p { margin-top: .65rem; }
+}
