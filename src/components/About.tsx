@@ -23,7 +23,7 @@ export function About() {
             <Reveal className="profile-glass-card education-compact">
               <div className="profile-card-heading">
                 <GraduationCap />
-                <span>1.1 / EDUCATION</span>
+                <span>EDUCATION</span>
               </div>
               {education.map((item) => (
                 <article key={item.id}>
@@ -37,7 +37,7 @@ export function About() {
             <Reveal className="profile-glass-card certifications-compact profile-certifications" delay={70}>
               <div className="profile-card-heading">
                 <Award />
-                <span>1.2 / CERTIFICATIONS</span>
+                <span>CERTIFICATIONS</span>
               </div>
               {certifications.map((cert) => (
                 <article key={cert.title}>
@@ -51,7 +51,7 @@ export function About() {
           <Reveal className="profile-glass-card capability-compact profile-capabilities" delay={110}>
             <div className="profile-card-heading">
               <span className="profile-dot" />
-              <span>2.1 / CAPABILITIES</span>
+              <span>CAPABILITIES</span>
             </div>
             <div className="capability-list">
               {skillGroups.slice(0, 5).map((group) => (
@@ -66,7 +66,7 @@ export function About() {
 
         <div className="profile-beyond">
           <div>
-            <span className="profile-beyond-index">03 / BEYOND THE SPREADSHEETS & VS CODE</span>
+            <span className="profile-beyond-index">BEYOND THE SPREADSHEETS & VS CODE</span>
             <h3>Outside the work</h3>
           </div>
           <div className="profile-interest-list">
