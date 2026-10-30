@@ -82,30 +82,4 @@ export const projects: Project[] = [
     image: "/picture/portfolio-risk-comparison.png",
     featured: true,
   },
-  {
-    slug: "finvista-academic-financial-analysis",
-    title: "Financial Analysis & Decision Support",
-    description:
-      "A finance-focused project portfolio exploring company financial diagnostics, valuation, and investment decision support.",
-    category: "Analytics",
-    context:
-      "Finance-oriented analysis connects reported financial data with structured measures that help readers evaluate a business.",
-    problem:
-      "Organize financial analysis so that assumptions, calculations, and conclusions remain traceable.",
-    approach:
-      "Use structured financial inputs and analytical methods to develop decision-support views, with explicit attention to data quality and calculation availability.",
-    analysis:
-      "The work includes financial statement parsing and diagnostic approaches, with project-specific methodology and outputs to be documented alongside verified results.",
-    insights: [
-      "Input quality and transparent assumptions are fundamental to financial diagnostics.",
-      "A missing or unavailable measure should be surfaced explicitly rather than presented as a valid result.",
-    ],
-    impact:
-      "Ongoing project work; no investment recommendation or unverified performance claim is made.",
-    tools: ["Python", "Financial Statement Analysis", "Data Validation"],
-    github: "https://github.com/thepanchanandgupta/FINVISTA",
-    liveDemo: "",
-    image: "/picture/financial-analysis.jpeg",
-    featured: false,
-  },
 ];
