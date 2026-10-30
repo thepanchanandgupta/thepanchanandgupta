@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
-  const interests = ["Poetry", "Swimming", "Reading", "Cycling"];
+  const interests = ["Writing", "Swimming", "Reading", "Cycling"];
 
   return (
     <section id="profile" className="section profile-section">
