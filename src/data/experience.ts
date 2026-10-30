@@ -18,7 +18,8 @@ export const experience: ExperienceEntry[] = [
     ],
     tools: ["SQL", "Postman", ".NET", "Workflow Automation", "Agile"],
     achievements: [],
-    metrics: ["30% reduction in turnaround time"],
+    outcomeLabel: "Operational impact",
+    metrics: ["Reduced KPI reporting turnaround time by 30% through workflow automation."],
   },
   {
     id: "blue-circle",
@@ -36,7 +37,10 @@ export const experience: ExperienceEntry[] = [
       "Prepared a Detailed Project Report and financial model covering CapEx, EBITDA, IRR, payback, and project risks.",
     ],
     tools: ["Market Research", "Financial Modelling", "Requirements Analysis"],
-    achievements: [],
+    achievements: [
+      "Developed the Detailed Project Report and financial model, presented them to the founders, and received their approval. The project was awaiting investor presentation when my internship concluded.",
+    ],
+    outcomeLabel: "Founder approval",
     metrics: [],
   },
   {
@@ -55,7 +59,8 @@ export const experience: ExperienceEntry[] = [
       "Coordinated editorial initiatives and intern recruitment.",
     ],
     tools: ["Editorial Review", "Writing", "Operations Coordination"],
-    achievements: ["Converted internship into a pre-placement offer through performance and execution."],
+    achievements: ["Converted the internship into a pre-placement offer through performance and execution."],
+    outcomeLabel: "Career outcome",
     metrics: [],
   },
 ];
