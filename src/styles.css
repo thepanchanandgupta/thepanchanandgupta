@@ -1679,44 +1679,11 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
 }
 
 
-/* Portfolio risk preview: clickable dashboard banner without hover zoom */
-.portfolio-risk-preview {
-  cursor:pointer;
-}
-.portfolio-risk-image-zoom {
-  display:block;
-  cursor:pointer;
-  outline-offset:4px;
-}
-.portfolio-risk-image-zoom img {
-  display:block;
-  width:100%;
-  max-height:650px;
-  object-fit:contain;
-  border-radius:5px;
-  background:#fff;
-}
-.portfolio-risk-preview figcaption {
-  padding:.65rem .2rem .05rem;
-  color:#7b8798;
-  font-size:.68rem;
-  line-height:1.45;
-}
-.portfolio-risk-links {
-  display:flex;
-  flex-wrap:wrap;
-  gap:.65rem 1.5rem;
-  margin-top:.9rem;
-}
-.portfolio-risk-links a {
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  color:#34445d;
-  font-size:.75rem;
-  font-weight:650;
-  text-decoration:none;
-}
-.portfolio-risk-links a:hover { color:#8b624b; }
-.portfolio-risk-links svg { width:14px; height:14px; }
-}
+/* Portfolio risk: static artwork, no hover zoom or click action */
+.portfolio-risk-evidence { margin:2.4rem 0 1.2rem; padding-top:1.25rem; border-top:1px solid #d8dee8; }
+.portfolio-risk-preview { margin:0; padding:.7rem; border:1px solid #d8dee8; border-radius:10px; background:#f8f9fb; }
+.portfolio-risk-static-image { display:block; cursor:default; }
+.portfolio-risk-static-image img { display:block; width:100%; max-height:650px; object-fit:contain; border-radius:5px; background:#fff; transform:none !important; transition:none !important; }
+.portfolio-risk-preview figcaption { padding:.65rem .2rem .05rem; color:#7b8798; font-size:.68rem; line-height:1.45; }
+.project-image-static { cursor:default; }
+.project-image-static img { transform:none !important; transition:none !important; }
