@@ -1,13 +1,12 @@
 import { Award, GraduationCap } from "lucide-react";
 import { achievements } from "@/data/achievements";
-import { education } from "@/data/education";
+import { certifications, education } from "@/data/education";
 import { profile } from "@/data/profile";
 import { skillGroups } from "@/data/skills";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
-  const degrees = education.filter((item) => item.id === "mba" || item.id === "undergrad");
   return (
     <section id="profile" className="section profile-section">
       <div className="container">
@@ -22,9 +21,24 @@ export function About() {
           <div className="profile-details">
             <Reveal className="profile-glass-card education-compact">
               <div className="profile-card-heading"><GraduationCap /><span>EDUCATION</span></div>
-              {degrees.map((item) => <article key={item.id}><div><strong>{item.type}</strong><span>{item.duration}</span></div><p>{item.institution}</p><small>{item.specialization} <b>{item.grade}</b></small></article>)}
+              {education.map((item) => (
+                <article key={item.id}>
+                  <div><strong>{item.degree}</strong><span>{item.duration}</span></div>
+                  <p>{item.institution}</p>
+                  <small>{item.specialization} <b>{item.grade}</b></small>
+                </article>
+              ))}
             </Reveal>
-            <Reveal className="profile-glass-card capability-compact" delay={90}>
+            <Reveal className="profile-glass-card certifications-compact profile-certifications" delay={70}>
+              <div className="profile-card-heading"><Award /><span>CERTIFICATIONS</span></div>
+              {certifications.map((cert) => (
+                <article key={cert.title}>
+                  <div><strong>{cert.title}</strong><span>{cert.year}</span></div>
+                  <p>{cert.issuer}</p>
+                </article>
+              ))}
+            </Reveal>
+            <Reveal className="profile-glass-card capability-compact" delay={130}>
               <div className="profile-card-heading"><span className="profile-dot" /><span>CAPABILITIES</span></div>
               <div className="capability-list">{skillGroups.slice(0, 5).map((group) => <div key={group.category}><strong>{group.category}</strong><p>{group.skills.join(" · ")}</p></div>)}</div>
             </Reveal>
