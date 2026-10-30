@@ -1523,3 +1523,103 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
 @media(max-width:560px) {
   .procurement-detail .finvista-module-grid { grid-template-columns:1fr; }
 }
+
+
+/* Procurement: visual proof-of-work gallery */
+.procurement-evidence {
+  margin:2.4rem 0 1.2rem;
+  padding-top:1.25rem;
+  border-top:1px solid #d8dee8;
+}
+.procurement-evidence-heading {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:1.5rem;
+  margin-bottom:1rem;
+}
+.procurement-evidence-heading h2 {
+  margin:.45rem 0 0;
+  color:#1c2b43;
+  font-size:1.35rem;
+  font-weight:650;
+  letter-spacing:-.035em;
+}
+.procurement-evidence-heading>p {
+  max-width:350px;
+  margin:0;
+  color:#68758a;
+  font-size:.75rem;
+  line-height:1.5;
+}
+.procurement-architecture {
+  margin:0 0 1rem;
+  padding:.75rem;
+  border:1px solid #d8dee8;
+  border-radius:10px;
+  background:#f8f9fb;
+}
+.procurement-architecture img {
+  display:block;
+  width:100%;
+  max-height:540px;
+  object-fit:contain;
+  border-radius:5px;
+  background:#fff;
+}
+.procurement-architecture figcaption,
+.procurement-evidence-card figcaption {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:.25rem .8rem;
+  padding:.65rem .2rem .05rem;
+  color:#7b8798;
+  font-size:.68rem;
+  line-height:1.45;
+}
+.procurement-evidence-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.85rem;
+}
+.procurement-evidence-card {
+  min-width:0;
+  margin:0;
+  padding:.55rem;
+  border:1px solid #d8dee8;
+  border-radius:9px;
+  background:#fff;
+}
+.procurement-evidence-card-wide {
+  grid-column:1 / -1;
+}
+.procurement-evidence-card img {
+  display:block;
+  width:100%;
+  max-height:440px;
+  object-fit:contain;
+  border-radius:5px;
+  background:#f4f6f9;
+}
+.procurement-evidence-card figcaption {
+  justify-content:flex-start;
+  gap:.3rem .65rem;
+  padding:.55rem .2rem .1rem;
+}
+.procurement-evidence-card figcaption strong {
+  color:#34445d;
+  font-size:.7rem;
+  font-weight:650;
+}
+.procurement-evidence-footnote {
+  margin:.9rem 0 0;
+  color:#808b9a;
+  font-size:.68rem;
+  line-height:1.5;
+}
+@media(max-width:620px) {
+  .procurement-evidence-heading { align-items:flex-start; flex-direction:column; gap:.35rem; }
+  .procurement-evidence-grid { grid-template-columns:1fr; }
+  .procurement-evidence-card-wide { grid-column:auto; }
+}
