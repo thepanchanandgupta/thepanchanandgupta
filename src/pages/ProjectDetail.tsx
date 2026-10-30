@@ -93,9 +93,11 @@ function ProcurementDetail({ project, previous, next }: { project: Project; prev
             <p>Architecture, analytical outputs and real delivery touchpoints from the workflow.</p>
           </div>
 
-          <figure className="procurement-architecture">
-            <img src="https://raw.githubusercontent.com/thepanchanandgupta/procurement-supply-chain-performance-intelligence/main/docs/architecture.png" alt="n8n workflow architecture showing connected automation touchpoints" loading="lazy" />
-            <figcaption>Workflow architecture · n8n orchestration and connected services</figcaption>
+          <figure className="procurement-architecture procurement-architecture-zoom">
+            <a className="procurement-image-zoom" href="https://raw.githubusercontent.com/thepanchanandgupta/procurement-supply-chain-performance-intelligence/main/docs/architecture.png" target="_blank" rel="noreferrer" aria-label="Open full-size n8n workflow architecture image in a new tab">
+              <img src="https://raw.githubusercontent.com/thepanchanandgupta/procurement-supply-chain-performance-intelligence/main/docs/architecture.png" alt="n8n workflow architecture showing connected automation touchpoints" loading="lazy" />
+            </a>
+            <figcaption><span>Workflow architecture · n8n orchestration and connected services</span><span className="procurement-zoom-hint">Hover to enlarge · Click to open full size <span aria-hidden="true">↗</span></span></figcaption>
           </figure>
 
           <div className="procurement-evidence-grid">
