@@ -163,7 +163,6 @@ function PortfolioRiskDetail({ project, previous, next }: { project: Project; pr
           <p className="finvista-lede">A comparative risk study of two non-overlapping ten-stock portfolios, tracking how risk and return behave across crisis, calm and current-market regimes. The dashboard supports interactive exploration of the results and underlying calculations.</p>
           <div className="finvista-actions">
             <a className="finvista-primary-link" href={dashboard} target="_blank" rel="noreferrer">Open live dashboard <ArrowUpRight /></a>
-            <a className="finvista-secondary-link" href={repo} target="_blank" rel="noreferrer"><Github /> View project repository <ArrowUpRight /></a>
           </div>
         </div>
       </header>
