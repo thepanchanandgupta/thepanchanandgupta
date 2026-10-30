@@ -1,13 +1,39 @@
 import type { ExperienceEntry } from "@/data/types";
-export function TimelineItem({ item, index }: { item: ExperienceEntry; index: number }) {
-  return <article className="timeline-item">
-    <div className="timeline-rail"><span>{String(index + 1).padStart(2, "0")}</span></div>
-    <div className="timeline-content">
-      <div className="timeline-meta"><span>{item.startDate} — {item.endDate}</span><span>{item.location}</span></div>
-      <h4>{item.role}</h4><p className="timeline-org">{item.organization}</p><p>{item.description}</p>
-      <ul className="contribution-list">{item.contributions.map((x, i) => <li key={i}>{x}</li>)}</ul>
-      <div className="tag-row">{item.tools.map((x, i) => <span key={`${x}-${i}`}>{x}</span>)}</div>
-      {(item.achievements.length > 0 || item.metrics.length > 0) && <div className="result-row"><strong>Selected result</strong><span>{[...item.achievements, ...item.metrics].join(" · ")}</span></div>}
-    </div>
-  </article>;
+
+export function TimelineItem({ item }: { item: ExperienceEntry; index: number }) {
+  const outcome = [...item.achievements, ...item.metrics].filter(Boolean);
+
+  return (
+    <article className="timeline-item">
+      <aside className="timeline-aside">
+        <span className="timeline-period">{item.startDate} — {item.endDate}</span>
+        <span className="timeline-location">{item.location}</span>
+      </aside>
+
+      <div className="timeline-content">
+        <h4>{item.role}</h4>
+        <p className="timeline-org">{item.organization}</p>
+        <p className="timeline-description">{item.description}</p>
+
+        <ul className="contribution-list">
+          {item.contributions.map((contribution, i) => (
+            <li key={i}>{contribution}</li>
+          ))}
+        </ul>
+
+        <p className="timeline-tools">
+          {item.tools.map((tool, i) => (
+            <span key={tool}>{tool}{i < item.tools.length - 1 ? " · " : ""}</span>
+          ))}
+        </p>
+
+        {outcome.length > 0 && (
+          <div className="result-row">
+            <strong>{item.outcomeLabel ?? "Outcome"}</strong>
+            <span>{outcome.join(" ")}</span>
+          </div>
+        )}
+      </div>
+    </article>
+  );
 }
