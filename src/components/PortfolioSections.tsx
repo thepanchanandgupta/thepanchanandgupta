@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Award, BookOpen, GraduationCap } from "lucide-react";
 import { achievements } from "@/data/achievements";
 import { certifications, education } from "@/data/education";
@@ -7,7 +6,6 @@ import { poems } from "@/data/poems";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skillGroups } from "@/data/skills";
-import type { ProjectCategory } from "@/data/types";
 import { ExperienceTimeline } from "./ExperienceTimeline";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { PoemCard } from "./PoemCard";
@@ -21,7 +19,7 @@ export function Experience() {
   return (
     <section id="experience" className="section section-contrast">
       <div className="container">
-        <SectionHeading index="02" eyebrow="Experience" title={profile.sectionTitles.experience} intro="Selected responsibilities and contributions, focused on outcomes and business impact." />
+        <SectionHeading index="03" eyebrow="Experience" title="Where I have made a difference" intro="A concise view of the roles, teams and problems that shaped how I work." />
         <ExperienceTimeline title="Work Experience" entries={work} />
         <ExperienceTimeline title="Internships" entries={internships} />
       </div>
@@ -29,20 +27,12 @@ export function Experience() {
   );
 }
 
-const categories: ("All" | ProjectCategory)[] = ["All", "Finance", "Analytics", "FinTech", "Consulting", "Automation", "Risk"];
-
 export function Projects() {
-  const [filter, setFilter] = useState<"All" | ProjectCategory>("All");
-  const visible = projects.filter((p) => filter === "All" || p.category === filter);
+  const visible = projects.filter((project) => project.featured);
   return (
     <section id="projects" className="section">
       <div className="container">
-        <SectionHeading index="03" eyebrow="Projects" title={profile.sectionTitles.projects} intro="Selected work connecting financial thinking, data analysis, and better business decisions." />
-        <div className="project-filters" role="group" aria-label="Filter projects">
-          {categories.map((cat) => (
-            <button type="button" key={cat} className={filter === cat ? "active" : ""} onClick={() => setFilter(cat)} aria-pressed={filter === cat}>{cat}</button>
-          ))}
-        </div>
+        <SectionHeading index="02" eyebrow="Selected work" title="Ideas turned into working systems" intro="A few projects where finance, data and technology meet. Each one starts with a real question." />
         <div className="projects-grid">
           {visible.map((project, i) => (
             <Reveal key={project.slug} delay={i * 70}>
