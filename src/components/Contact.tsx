@@ -1,5 +1,4 @@
 import { profile } from "@/data/profile";
-import { SectionHeading } from "./SectionHeading";
 
 export function Contact() {
   const subject = encodeURIComponent("Professional enquiry — Panchanand Gupta");
@@ -8,20 +7,22 @@ export function Contact() {
   return (
     <section id="contact" className="section contact-section">
       <div className="container">
-        <SectionHeading
-          eyebrow="Contact"
-          title={profile.sectionTitles.contact}
-          intro="For opportunities, collaborations, thoughtful conversations, or a shared interest in the work."
-        />
-
-        <div className="contact-email-list">
-          <div className="contact-email-item">
-            <span>Primary</span>
-            <a href={emailLink}>{profile.email}</a>
+        <div className="contact-layout">
+          <div className="contact-copy">
+            <span className="contact-eyebrow">Contact</span>
+            <h2>{profile.sectionTitles.contact}</h2>
+            <p>For opportunities, collaborations, thoughtful conversations, or a shared interest in the work.</p>
           </div>
-          <div className="contact-email-item">
-            <span>Academic</span>
-            <a href={`mailto:${profile.academicEmail}`}>{profile.academicEmail}</a>
+
+          <div className="contact-email-list" aria-label="Email contacts">
+            <div className="contact-email-item">
+              <a href={emailLink}>{profile.email}</a>
+              <span>(Primary)</span>
+            </div>
+            <div className="contact-email-item">
+              <a href={`mailto:${profile.academicEmail}`}>{profile.academicEmail}</a>
+              <span>(Academic)</span>
+            </div>
           </div>
         </div>
       </div>
