@@ -57,7 +57,7 @@ export function About() {
               {skillGroups.slice(0, 5).map((group) => (
                 <div key={group.category}>
                   <strong>{group.category}</strong>
-                  <p>{group.skills.join(" · ")}</p>
+                  <ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
                 </div>
               ))}
             </div>
