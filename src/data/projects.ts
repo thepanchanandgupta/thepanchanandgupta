@@ -32,7 +32,7 @@ export const projects: Project[] = [
     slug: "procurement-supply-chain-intelligence",
     title: "Procurement & Supply Chain Performance Intelligence",
     description:
-      "An analytics and automation concept that turns procurement, inventory, and supplier findings into management actions.",
+      "An n8n-powered workflow that interprets validated procurement, inventory and supplier findings with AI and delivers management alerts through Telegram.",
     category: "Automation",
     context:
       "Procurement and supply chain data can contain signals about spend, inventory health, supplier performance, and operational inefficiencies.",
