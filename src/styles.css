@@ -1767,3 +1767,97 @@ footer {
     padding-top: .8rem;
   }
 }
+
+
+/* Contact layout: copy on the left, inline email details on the right */
+#contact .contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(420px, 1fr);
+  align-items: center;
+  gap: 3rem;
+}
+#contact .contact-copy {
+  min-width: 0;
+}
+#contact .contact-eyebrow {
+  display: block;
+  margin-bottom: .9rem;
+  color: #d2a080;
+  font: 600 .62rem "JetBrains Mono", monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+#contact .contact-copy h2 {
+  margin: 0;
+  color: #eef2fa;
+  font-family: var(--font-sans);
+  font-size: clamp(2.1rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+#contact .contact-copy p {
+  max-width: 650px;
+  margin: .75rem 0 0;
+  color: oklch(.76 .02 85);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+#contact .contact-email-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.1rem;
+  margin: 1.4rem 0 0;
+}
+#contact .contact-email-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: .35rem;
+  min-width: 0;
+  flex-direction: row;
+  white-space: nowrap;
+}
+#contact .contact-email-item > a {
+  color: #8eb4c5;
+  font-size: .86rem;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#contact .contact-email-item > span {
+  color: #eef2fa;
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media(max-width: 900px) {
+  #contact .contact-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+  #contact .contact-email-item {
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+}
+@media(max-width: 680px) {
+  #contact .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  #contact .contact-copy h2 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+  #contact .contact-email-list {
+    align-items: flex-start;
+    margin-top: .2rem;
+    gap: .75rem;
+  }
+  #contact .contact-email-item {
+    justify-content: flex-start;
+  }
+}
