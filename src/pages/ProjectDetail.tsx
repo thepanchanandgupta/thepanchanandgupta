@@ -151,7 +151,6 @@ function CaseSection({ id, number, label, text, title }: {id:string;number:strin
 
 function PortfolioRiskDetail({ project, previous, next }: { project: Project; previous?: Project | undefined; next?: Project | undefined }) {
   const dashboard = "https://thepanchanandgupta.github.io/Academics-FRA-1/";
-  const repo = "https://github.com/thepanchanandgupta/Academics-FRA-1";
   return (
     <main id="main-content" className="detail-page finvista-detail portfolio-risk-detail">
       <header className="finvista-case-hero">
@@ -194,7 +193,6 @@ function PortfolioRiskDetail({ project, previous, next }: { project: Project; pr
           </figure>
           <div className="portfolio-risk-links">
             <a href={dashboard} target="_blank" rel="noreferrer">Open interactive dashboard <ArrowUpRight /></a>
-            <a href={repo} target="_blank" rel="noreferrer">View source repository <ArrowUpRight /></a>
           </div>
         </section>
 
