@@ -1104,3 +1104,89 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
   .site-header { top:.35rem; padding-inline:.5rem; }
   .site-header .navbar { background:#0f192a; }
 }
+
+/* Profile information: compact academic stack, capabilities alongside, interests below */
+.profile-overview-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:start;
+  gap:1rem;
+}
+.profile-academic-column {
+  display:grid;
+  align-content:start;
+  gap:.85rem;
+  min-width:0;
+}
+.profile-overview-grid .profile-glass-card {
+  min-width:0;
+  padding:1.05rem 1.2rem;
+}
+.profile-overview-grid .profile-card-heading {
+  margin-bottom:.65rem;
+}
+.profile-overview-grid .education-compact article {
+  padding:.48rem 0;
+}
+.profile-overview-grid .profile-certifications article {
+  padding:.45rem 0;
+}
+.profile-overview-grid .capability-list {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.7rem .9rem;
+}
+.profile-overview-grid .capability-list>div {
+  padding-top:.45rem;
+}
+.profile-overview-grid .capability-list p {
+  font-size:.69rem;
+}
+.profile-beyond {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+  margin-top:1rem;
+  padding:1rem 1.2rem;
+  border:1px solid #d6dce6;
+  border-radius:12px;
+  background:rgba(255,255,255,.48);
+}
+.profile-beyond-index {
+  color:#9a6a50;
+  font:600 .62rem "JetBrains Mono",monospace;
+  letter-spacing:.08em;
+}
+.profile-beyond h3 {
+  margin:.25rem 0 0;
+  color:#1d2c45;
+  font-size:.95rem;
+  font-weight:600;
+}
+.profile-interest-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:.45rem;
+}
+.profile-interest-list span {
+  padding:.35rem .75rem;
+  border:1px solid #d5dce8;
+  border-radius:999px;
+  color:#46546a;
+  background:rgba(255,255,255,.55);
+  font-size:.72rem;
+}
+.profile-section .recognition-line {
+  margin-top:1rem;
+}
+@media(max-width:760px) {
+  .profile-overview-grid { grid-template-columns:1fr; }
+  .profile-beyond { align-items:flex-start; flex-direction:column; }
+  .profile-interest-list { justify-content:flex-start; }
+}
+@media(max-width:480px) {
+  .profile-overview-grid .capability-list { grid-template-columns:1fr; }
+  .profile-overview-grid .education-compact article>div,
+  .profile-overview-grid .profile-certifications article>div { align-items:flex-start; }
+}
