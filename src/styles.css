@@ -1497,3 +1497,29 @@ html{scroll-padding-top:5.5rem}body{background:#f1f3f6;color:#172033;font-size:1
   .finvista-build-row { align-items:flex-start; flex-direction:column; gap:.75rem; }
   .finvista-disclaimer { text-align:left; }
 }
+
+
+/* Procurement project: compact workflow explanation and clear demo availability note */
+.procurement-demo-note {
+  display:inline-block;
+  margin:1rem 0 0;
+  padding:.55rem .75rem;
+  border-left:2px solid #d2a080;
+  background:rgba(255,255,255,.055);
+  color:#bdc9dc;
+  font-size:.74rem;
+  line-height:1.5;
+}
+.procurement-demo-note strong {
+  color:#f0c09d;
+  font-weight:650;
+}
+.procurement-detail .finvista-module-grid {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+@media(max-width:850px) {
+  .procurement-detail .finvista-module-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:560px) {
+  .procurement-detail .finvista-module-grid { grid-template-columns:1fr; }
+}

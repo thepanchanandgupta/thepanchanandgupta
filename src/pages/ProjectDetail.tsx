@@ -7,6 +7,9 @@ export function ProjectDetail({ project, previous, next }: { project: Project; p
   if (project.slug === "finvista") {
     return <FinvistaDetail project={project} previous={previous} next={next} />;
   }
+  if (project.slug === "procurement-supply-chain-intelligence") {
+    return <ProcurementDetail project={project} previous={previous} next={next} />;
+  }
 
   const safeHref = (v: string) => v.startsWith("[") || !v ? "#" : v;
   return <main id="main-content" className="detail-page"><header className={`case-hero ${project.featured ? "featured" : ""}`}><div className="container"><Link to="/" hash="projects" className="back-link"><ArrowLeft/> All projects</Link><div className="case-heading"><div><div className="project-meta"><span>{project.category}</span>{project.featured && <span>Featured case study</span>}</div><h1>{project.title}</h1><p>{project.description}</p></div><ImagePlaceholder src={project.image} alt={`${project.title} cover`} label="[ADD PROJECT IMAGE]" monogram="CS"/></div></div></header><article className="container case-body"><aside><p>Case study</p>{["Context", "Problem", "Approach", "Analysis", "Key Insights", "Business Impact", "Tools & Links"].map((x, i)=><a href={`#case-${i}`} key={x}>{String(i+1).padStart(2,"0")} {x}</a>)}</aside><div className="case-content"><CaseSection id="case-0" number="01" label="Context" text={project.context}/><CaseSection id="case-1" number="02" label="Problem" text={project.problem}/><CaseSection id="case-2" number="03" label="Approach" text={project.approach}/><CaseSection id="case-3" number="04" label="Analysis / Methodology" text={project.analysis}/><section id="case-4"><span>05 / Key insights</span><h2>What the analysis revealed</h2><ol>{project.insights.map((x,i)=><li key={i}><strong>{String(i+1).padStart(2,"0")}</strong><p>{x}</p></li>)}</ol></section><CaseSection id="case-5" number="06" label="Business impact" title="Why it mattered" text={project.impact}/><section id="case-6"><span>07 / Tools & links</span><h2>Working toolkit</h2><div className="tag-row">{project.tools.map((x, i)=><span key={`${x}-${i}`}>{x}</span>)}</div><div className="case-links"><a href={safeHref(project.github)}><Github/> GitHub</a><a href={safeHref(project.liveDemo)}><ExternalLink/> Live demo</a></div></section></div></article><nav className="container detail-pagination" aria-label="Project navigation">{previous ? <Link to="/projects/$slug" params={{slug:previous.slug}}><span><ArrowLeft/> Previous project</span><strong>{previous.title}</strong></Link>:<span/>}{next && <Link to="/projects/$slug" params={{slug:next.slug}}><span>Next project <ArrowRight/></span><strong>{next.title}</strong></Link>}</nav></main>;
@@ -45,6 +48,48 @@ function FinvistaDetail({ project, previous, next }: { project: Project; previou
             <div className="finvista-stack">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
           </div>
           <p className="finvista-disclaimer">An academic decision-support prototype — not investment advice.</p>
+        </div>
+      </section>
+
+      <nav className="container detail-pagination" aria-label="Project navigation">
+        {previous ? <Link to="/projects/$slug" params={{slug:previous.slug}}><span><ArrowLeft /> Previous project</span><strong>{previous.title}</strong></Link> : <span />}
+        {next && <Link to="/projects/$slug" params={{slug:next.slug}}><span>Next project <ArrowRight /></span><strong>{next.title}</strong></Link>}
+      </nav>
+    </main>
+  );
+}
+
+function ProcurementDetail({ project, previous, next }: { project: Project; previous?: Project | undefined; next?: Project | undefined }) {
+  return (
+    <main id="main-content" className="detail-page finvista-detail procurement-detail">
+      <header className="finvista-case-hero">
+        <div className="container">
+          <Link to="/" hash="projects" className="back-link"><ArrowLeft /> All projects</Link>
+          <div className="project-meta"><span>Operations · Analytics & Automation</span><span>Workflow prototype</span></div>
+          <h1>Procurement & Supply Chain</h1>
+          <p className="finvista-subtitle">Performance Intelligence</p>
+          <p className="finvista-lede">An AI-assisted workflow designed to surface procurement, inventory and supplier-performance opportunities, then translate validated findings into management recommendations and financial implications.</p>
+          <p className="procurement-demo-note"><strong>No live demo available.</strong> This project was built as an n8n workflow rather than a standalone web application.</p>
+        </div>
+      </header>
+
+      <section className="container finvista-case-content">
+        <div className="finvista-capabilities">
+          <div className="finvista-section-label">HOW THE WORKFLOW WORKS</div>
+          <div className="finvista-module-grid">
+            <article><h2>Operational signals</h2><p>Examines procurement, inventory and supplier-performance indicators to surface inefficiencies and improvement opportunities.</p></article>
+            <article><h2>Analytical validation</h2><p>Uses structured checks to establish the underlying findings before any AI-generated interpretation is produced.</p></article>
+            <article><h2>AI interpretation</h2><p>Claude interprets validated findings and turns them into concise, context-aware management recommendations.</p></article>
+            <article><h2>Automated alerts</h2><p>n8n orchestrates the workflow and delivers actionable summaries through Telegram for timely review.</p></article>
+          </div>
+        </div>
+
+        <div className="finvista-build-row">
+          <div>
+            <div className="finvista-section-label">BUILT WITH</div>
+            <div className="finvista-stack">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
+          </div>
+          <p className="finvista-disclaimer">Designed to connect operational performance with potential financial impact; savings are not claimed without measured results.</p>
         </div>
       </section>
 
