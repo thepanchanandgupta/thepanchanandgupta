@@ -1868,3 +1868,192 @@ footer {
   #experience .timeline-item { grid-template-columns: 210px minmax(0, 1fr); gap: 1.25rem; }
   #experience .timeline-period { white-space: nowrap; letter-spacing: .035em; font-size: .6rem; }
 }
+
+
+/* Portfolio-wide type system: consistent hierarchy across sections */
+:root {
+  --type-display: clamp(4rem, 7.2vw, 7.4rem);
+  --type-section: clamp(2.55rem, 4.6vw, 4.35rem);
+  --type-subsection: clamp(1.45rem, 2vw, 1.8rem);
+  --type-card-title: clamp(1.35rem, 1.8vw, 1.65rem);
+  --type-body: .9rem;
+  --type-small: .75rem;
+  --type-label: .66rem;
+}
+
+/* Primary display */
+.hero h1 {
+  font-size: var(--type-display);
+  line-height: .88;
+  letter-spacing: -.025em;
+}
+
+/* Shared section heading treatment */
+.section-heading h2 {
+  font-size: var(--type-section);
+  line-height: .98;
+  letter-spacing: -.025em;
+}
+.section-heading > div:last-child p,
+.section-heading p {
+  font-size: var(--type-body);
+  line-height: 1.65;
+}
+
+/* Section-level headings and content titles */
+.about-extras h3,
+.education-list h3,
+.aside-title h3,
+.timeline-content h4,
+.project-card h3,
+.skills-grid h3,
+.achievement-grid h3 {
+  font-size: var(--type-subsection);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+.project-card h3,
+.education-list h3,
+.skills-grid h3,
+.achievement-grid h3 {
+  font-size: var(--type-card-title);
+}
+.timeline-content h4 {
+  font-size: 1.35rem;
+}
+.certifications h4,
+.bento-grid h3,
+.finvista-module-grid h2 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+/* Writing has its own editorial title, but stays within the same scale */
+.writing-intro h2 {
+  font-size: clamp(3rem, 5.4vw, 5.1rem);
+  line-height: .98;
+  letter-spacing: -.025em;
+}
+.poem-card h3 {
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+.poem-index {
+  font-size: 1.7rem;
+}
+
+/* Supporting copy: readable, consistent, and deliberately secondary */
+.hero-intro {
+  font-size: clamp(1.25rem, 1.9vw, 1.7rem);
+  line-height: 1.4;
+}
+.project-card p,
+.timeline-description,
+.timeline-content .contribution-list li,
+.education-list dd,
+.skills-grid article div p,
+.achievement-grid article > p:last-child,
+.bento-grid p,
+.certifications p {
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+.project-meta,
+.eyebrow,
+.section-kicker,
+.timeline-group > h3,
+.timeline-period,
+.profile-beyond-index {
+  font-size: var(--type-label);
+}
+.project-filters button,
+.tag-row span,
+.footer-grid nav a {
+  font-size: var(--type-small);
+}
+
+/* Important metric headings retain emphasis without competing with page titles */
+.impact-grid strong {
+  font-size: clamp(1.55rem, 2vw, 2.05rem);
+}
+.impact-grid p {
+  font-size: .8rem;
+}
+.impact-grid span,
+.impact-grid small {
+  font-size: var(--type-label);
+}
+
+/* Project detail pages use a consistent title and subtitle hierarchy */
+.case-heading h1,
+.poem-reader h1 {
+  font-size: clamp(3rem, 5.8vw, 5.5rem);
+  line-height: .94;
+  letter-spacing: -.035em;
+}
+.finvista-case-hero h1 {
+  font-size: clamp(2.7rem, 5.2vw, 4.1rem);
+  line-height: .98;
+}
+.case-heading > div > p,
+.finvista-lede {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.finvista-module-grid h2 {
+  font-size: 1rem;
+}
+.procurement-evidence-heading h2 {
+  font-size: 1.3rem;
+}
+
+/* Contact heading follows the shared section-title scale */
+#contact .contact-copy h2 {
+  font-size: clamp(2.35rem, 3.8vw, 3.35rem);
+  line-height: 1.04;
+}
+
+/* Responsive adjustments: preserve hierarchy without oversized wraps */
+@media(max-width: 760px) {
+  :root {
+    --type-section: clamp(2.25rem, 8.5vw, 3.1rem);
+    --type-subsection: 1.4rem;
+    --type-card-title: 1.35rem;
+  }
+  .hero h1 {
+    font-size: clamp(3.5rem, 15vw, 5.4rem);
+    line-height: .9;
+  }
+  .hero-intro {
+    font-size: 1.2rem;
+  }
+  .section-heading h2 {
+    font-size: var(--type-section);
+  }
+  .writing-intro h2 {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+  .case-heading h1,
+  .poem-reader h1 {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+  }
+  .finvista-case-hero h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+  #contact .contact-copy h2 {
+    font-size: clamp(2.1rem, 9vw, 2.8rem);
+  }
+}
+
+/* Compact phones */
+@media(max-width: 420px) {
+  .hero h1 {
+    font-size: clamp(3.1rem, 14vw, 4rem);
+  }
+  .section-heading h2 {
+    font-size: clamp(2.1rem, 9vw, 2.65rem);
+  }
+  .writing-intro h2 {
+    font-size: clamp(2.6rem, 11vw, 3.3rem);
+  }
+}
