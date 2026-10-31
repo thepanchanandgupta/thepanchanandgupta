@@ -2302,3 +2302,25 @@ footer {
     padding: .2rem 0 .65rem;
   }
 }
+
+
+/* Requested project-card spacing: one line after title, two before process row */
+.projects-grid .project-card-body {
+  grid-template-rows: auto 6.2rem 9.1rem 2.6rem auto;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto 6.5rem 10.1rem 2.6rem auto;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto auto auto 2.6rem auto;
+  }
+  .projects-grid .project-card-body > h3 {
+    margin-bottom: 1.3rem;
+  }
+  .projects-grid .project-card-body > p {
+    margin-bottom: 3.3rem;
+  }
+}
