@@ -2057,3 +2057,55 @@ footer {
     font-size: clamp(2.6rem, 11vw, 3.3rem);
   }
 }
+
+
+/* Project cards: consistent vertical rhythm and aligned card bottoms */
+.projects-grid > .reveal {
+  display: flex;
+  min-width: 0;
+}
+.projects-grid > .reveal > .project-card {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+.projects-grid .project-image-link,
+.projects-grid .project-card.featured .project-image-link {
+  flex: 0 0 122px;
+  height: 122px;
+}
+.projects-grid .project-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+.projects-grid .project-card h3 {
+  min-height: 3.75em;
+}
+.projects-grid .project-card p {
+  min-height: 4.8em;
+}
+.projects-grid .project-card .project-flow {
+  margin-top: 0;
+}
+.projects-grid .project-card .project-bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card h3 {
+    min-height: 5em;
+  }
+  .projects-grid .project-card p {
+    min-height: 6.4em;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card h3,
+  .projects-grid .project-card p {
+    min-height: 0;
+  }
+}
