@@ -49,7 +49,7 @@ export const projects: Project[] = [
     ],
     impact:
       "Designed to identify performance-improvement opportunities; quantified savings should be added only when measured and verified.",
-    tools: ["n8n", "Analytics", "Claude AI", "Telegram"],
+    tools: ["n8n", "API Integration", "JavaScript", "Telegram"],
     github: "",
     liveDemo: "",
     image: "/picture/procurement-intelligence.jpeg",
