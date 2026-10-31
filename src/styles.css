@@ -2116,6 +2116,17 @@ footer {
   flex: 0 0 auto;
   margin-left: auto;
 }
+/* Aligned process rows on desktop/tablet: titles and descriptions share a
+   modest minimum (2 title lines / 4 description lines) so the flow row starts
+   at the same position on every card without clipping or large blank areas. */
+@media (min-width: 641px) {
+  .projects-grid .project-card-body > h3 {
+    min-height: 2.6em;
+  }
+  .projects-grid .project-card-body > p {
+    min-height: 6.4em;
+  }
+}
 @media (max-width: 640px) {
   .projects-grid .project-card-body > .project-flow {
     white-space: normal;
