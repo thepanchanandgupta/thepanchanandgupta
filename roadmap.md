@@ -10,3 +10,4 @@
 - [x] Build project and poem detail routes
 - [x] Add static hosting fallbacks, resume placeholder, and customization guide
 - [x] Validate compilation, accessibility, routes, interactions, reduced motion, and 360–1440px layouts
+- [x] Refactor project card layout: left-aligned tags, far-right arrow, aligned process rows, no clipped text
