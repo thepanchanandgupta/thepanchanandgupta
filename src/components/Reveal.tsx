@@ -1,6 +1,15 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+
+/**
+ * Marks a surface that settles into place as it scrolls into view.
+ * Purely declarative: the choreography lives in motion.css (CSS scroll-driven
+ * animation), so there is no observer, no state and no hydration flash.
+ * `delay` is kept for API compatibility and becomes a stagger index.
+ */
 export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null); const [visible, setVisible] = useState(false);
-  useEffect(() => { const node = ref.current; if (!node) return; const observer = new IntersectionObserver(([entry]) => { if (entry?.isIntersecting) { setVisible(true); observer.disconnect(); } }, { rootMargin: "0px 0px -8%" }); observer.observe(node); return () => observer.disconnect(); }, []);
-  return <div ref={ref} className={`reveal ${visible ? "is-visible" : ""} ${className}`} style={{ "--reveal-delay": `${delay}ms` } as React.CSSProperties}>{children}</div>;
+  return (
+    <div className={`reveal ${className}`.trim()} data-m="plate" style={{ "--i": Math.round(delay / 60) } as CSSProperties}>
+      {children}
+    </div>
+  );
 }
