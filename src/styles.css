@@ -2545,3 +2545,259 @@ a,button { -webkit-tap-highlight-color: transparent; }
     transition: none;
   }
 }
+
+
+/* ==========================================================
+   DEPTH + GLASS MOTION SYSTEM
+   Motion and material only — existing colour system untouched.
+   ========================================================== */
+.portfolio-shell {
+  perspective: 1600px;
+  perspective-origin: 50% 42%;
+  transform-style: preserve-3d;
+}
+.scroll-stage {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  overflow: clip;
+}
+.scroll-stage > .container {
+  position: relative;
+  transform-origin: 50% 48%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: perspective(1600px) translate3d(0,54px,-90px) rotateX(5deg) scale(.965);
+  opacity: 0;
+  filter: blur(7px);
+  transition:
+    transform 1.15s cubic-bezier(.16,1,.3,1),
+    opacity .9s cubic-bezier(.16,1,.3,1),
+    filter 1s cubic-bezier(.16,1,.3,1);
+  will-change: transform,opacity,filter;
+}
+.scroll-stage.is-entered > .container {
+  transform: perspective(1600px) translate3d(0,0,0) rotateX(0) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+.scroll-stage.is-past > .container {
+  transform: perspective(1600px) translate3d(0,-24px,-65px) rotateX(-2deg) scale(.975);
+  opacity: .82;
+  filter: blur(1.2px);
+}
+.scroll-stage.is-current > .container {
+  transform: perspective(1600px) translate3d(0,0,35px) rotateX(0) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+.hero.scroll-stage > .container,
+.impact-strip.scroll-stage > .container {
+  transform: perspective(1600px) translate3d(0,40px,-65px) rotateX(3deg) scale(.98);
+}
+.hero.scroll-stage.is-entered > .container,
+.impact-strip.scroll-stage.is-entered > .container,
+.hero.scroll-stage.is-current > .container,
+.impact-strip.scroll-stage.is-current > .container {
+  transform: perspective(1600px) translate3d(0,0,25px) rotateX(0) scale(1);
+  opacity: 1;
+  filter: none;
+}
+
+/* Translucent glass layer shared by the main content surfaces */
+.project-card,
+.profile-glass-card,
+.certifications,
+.education-list > article,
+.achievement-grid article,
+.skills-grid article,
+.timeline-item,
+.contact-email-item {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 24%);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  box-shadow:
+    0 18px 45px rgb(15 25 22 / 9%),
+    inset 0 1px 0 rgb(255 255 255 / 42%),
+    inset 0 -1px 0 rgb(255 255 255 / 8%);
+}
+.project-card::before,
+.profile-glass-card::before,
+.achievement-grid article::before,
+.skills-grid article::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .65;
+  background:
+    linear-gradient(132deg,rgb(255 255 255 / 22%),transparent 34%),
+    linear-gradient(315deg,rgb(255 255 255 / 7%),transparent 45%);
+  transform: translateZ(1px);
+}
+.project-card > *,
+.profile-glass-card > *,
+.achievement-grid article > *,
+.skills-grid article > * {
+  position: relative;
+  z-index: 1;
+}
+.project-card {
+  transform-style: preserve-3d;
+  transform: perspective(1200px) translateZ(0) rotateX(0) rotateY(0);
+  transition:
+    transform .72s cubic-bezier(.16,1,.3,1),
+    box-shadow .65s ease,
+    border-color .45s ease,
+    background .45s ease;
+}
+.project-card:hover {
+  transform: perspective(1200px) translate3d(0,-10px,24px) rotateX(1.4deg) rotateY(-1.2deg) scale(1.012);
+  box-shadow:
+    0 35px 80px rgb(8 17 15 / 23%),
+    0 10px 24px rgb(8 17 15 / 12%),
+    inset 0 1px 0 rgb(255 255 255 / 48%);
+}
+.project-card .project-image-link {
+  transform: translateZ(18px);
+  transform-style: preserve-3d;
+}
+.project-card .project-card-body {
+  transform: translateZ(12px);
+  transform-style: preserve-3d;
+}
+.profile-glass-card,
+.skills-grid article,
+.achievement-grid article {
+  transform: perspective(1000px) translateZ(0);
+  transition:
+    transform .7s cubic-bezier(.16,1,.3,1),
+    box-shadow .6s ease,
+    border-color .4s ease;
+}
+.profile-glass-card:hover,
+.skills-grid article:hover,
+.achievement-grid article:hover {
+  transform: perspective(1000px) translate3d(0,-7px,18px) rotateX(1deg);
+  box-shadow:
+    0 28px 65px rgb(15 25 22 / 15%),
+    inset 0 1px 0 rgb(255 255 255 / 48%);
+}
+
+/* Light-catching glass navigation and floating controls */
+.navbar {
+  backdrop-filter: blur(24px) saturate(155%);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
+  box-shadow:
+    0 16px 48px rgb(5 15 13 / 24%),
+    inset 0 1px 0 rgb(255 255 255 / 16%);
+  transition: transform .55s cubic-bezier(.16,1,.3,1),box-shadow .45s ease,background .45s ease;
+}
+.site-header.is-scrolled .navbar {
+  transform: translateY(-2px) scale(.992);
+  box-shadow:
+    0 20px 55px rgb(5 15 13 / 28%),
+    inset 0 1px 0 rgb(255 255 255 / 19%);
+}
+
+/* Reveal elements in layered depth planes */
+.reveal {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  filter: blur(6px);
+  transition:
+    opacity .85s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),
+    transform 1s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),
+    filter .85s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms);
+}
+.reveal:not(.is-visible) {
+  transform: perspective(1100px) translate3d(0,34px,-45px) rotateX(4deg) scale(.98);
+}
+.reveal.is-visible {
+  transform: perspective(1100px) translate3d(0,0,0) rotateX(0) scale(1);
+  filter: blur(0);
+}
+
+/* A translucent sheen sweeps across cards on hover */
+.project-card::after,
+.profile-glass-card::after,
+.skills-grid article::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: -60% auto -60% -75%;
+  width: 48%;
+  pointer-events: none;
+  opacity: 0;
+  transform: rotate(18deg) translateX(-30%);
+  background: linear-gradient(90deg,transparent,rgb(255 255 255 / 22%),transparent);
+  transition: transform .95s cubic-bezier(.16,1,.3,1),opacity .35s ease;
+}
+.project-card:hover::after,
+.profile-glass-card:hover::after,
+.skills-grid article:hover::after {
+  opacity: 1;
+  transform: rotate(18deg) translateX(440%);
+}
+
+/* Section edges get a glass-like light catch without changing their colour */
+.scroll-stage::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0 0 auto;
+  height: 1px;
+  pointer-events: none;
+  opacity: .5;
+  background: linear-gradient(90deg,transparent,rgb(255 255 255 / 58%),transparent);
+  transform: translateZ(2px);
+}
+
+/* Mobile: keep the layered reveal, reduce tilt and blur for comfort */
+@media (max-width: 760px) {
+  .portfolio-shell { perspective: none; }
+  .scroll-stage > .container {
+    transform: translate3d(0,28px,0) scale(.985);
+    filter: blur(2px);
+  }
+  .scroll-stage.is-entered > .container,
+  .scroll-stage.is-current > .container {
+    transform: translate3d(0,0,0) scale(1);
+  }
+  .scroll-stage.is-past > .container {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+  .project-card:hover,
+  .profile-glass-card:hover,
+  .skills-grid article:hover,
+  .achievement-grid article:hover {
+    transform: translateY(-3px);
+  }
+  .project-card::after,
+  .profile-glass-card::after,
+  .skills-grid article::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-stage > .container,
+  .scroll-stage.is-entered > .container,
+  .scroll-stage.is-current > .container,
+  .scroll-stage.is-past > .container,
+  .reveal,.reveal.is-visible,
+  .project-card,.project-card:hover,
+  .profile-glass-card,.profile-glass-card:hover,
+  .skills-grid article,.skills-grid article:hover,
+  .achievement-grid article,.achievement-grid article:hover,
+  .navbar,.site-header.is-scrolled .navbar {
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+  .scroll-stage > .container,.scroll-stage.is-past > .container { opacity: 1; }
+  .project-card::after,.profile-glass-card::after,.skills-grid article::after { display: none; }
+}
