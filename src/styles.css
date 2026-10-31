@@ -2215,3 +2215,51 @@ footer {
     white-space: normal;
   }
 }
+
+
+/* Correct project card title/body collision with explicit, non-overlapping rows */
+.projects-grid .project-card-body {
+  display: grid;
+  grid-template-rows: auto 4.6rem 5.4rem 2.2rem auto;
+  align-content: start;
+}
+.projects-grid .project-card-body > h3 {
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: .8rem 0;
+  line-height: 1.25;
+  overflow: hidden;
+}
+.projects-grid .project-card-body > p {
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: .15rem 0 .55rem;
+  line-height: 1.6;
+  overflow: hidden;
+}
+.projects-grid .project-card-body > .project-flow {
+  align-self: stretch;
+  margin: 0;
+}
+.projects-grid .project-card-body > .project-bottom {
+  margin-top: 0;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto 5rem 6.4rem 2.2rem auto;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto auto auto 2.2rem auto;
+  }
+  .projects-grid .project-card-body > h3,
+  .projects-grid .project-card-body > p {
+    height: auto;
+    overflow: visible;
+  }
+}
