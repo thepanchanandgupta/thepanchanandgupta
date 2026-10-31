@@ -2058,8 +2058,11 @@ footer {
   }
 }
 
-
-/* Project cards: consistent vertical rhythm and aligned card bottoms */
+/* ==========================================================
+   Project cards — authoritative layout (single source of truth)
+   Tags left, circular arrow far right, footer anchored to the
+   card bottom with margin-top:auto. Natural content heights.
+   ========================================================== */
 .projects-grid > .reveal {
   display: flex;
   min-width: 0;
@@ -2071,402 +2074,50 @@ footer {
   width: 100%;
   min-width: 0;
 }
-.projects-grid .project-image-link,
-.projects-grid .project-card.featured .project-image-link {
-  flex: 0 0 122px;
-  height: 122px;
-}
 .projects-grid .project-card-body {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   min-width: 0;
-}
-.projects-grid .project-card h3 {
-  min-height: 3.75em;
-}
-.projects-grid .project-card p {
-  min-height: 4.8em;
-}
-.projects-grid .project-card .project-flow {
-  margin-top: 0;
-}
-.projects-grid .project-card .project-bottom {
-  margin-top: auto;
-  padding-top: 1rem;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card h3 {
-    min-height: 5em;
-  }
-  .projects-grid .project-card p {
-    min-height: 6.4em;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card h3,
-  .projects-grid .project-card p {
-    min-height: 0;
-  }
-}
-
-
-/* Fine-tune project card alignment: process rows and technology actions */
-.projects-grid .project-card p {
-  min-height: 5.35em;
-}
-.projects-grid .project-card .project-bottom {
-  gap: .65rem;
-}
-.projects-grid .project-card .project-bottom .tag-row {
-  flex: 1 1 0;
-  min-width: 0;
-  gap: .35rem;
-  padding-right: .2rem;
-}
-.projects-grid .project-card .project-bottom .round-link {
-  flex: 0 0 42px;
-  margin-left: .15rem;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card p {
-    min-height: 6.4em;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card p {
-    min-height: 0;
-  }
-}
-
-
-/* Project card final alignment: lock the content rows to shared heights */
-.projects-grid .project-card-body {
-  display: grid;
-  grid-template-rows: auto 3.75em 5.35em 2.2rem auto;
-  align-content: stretch;
 }
 .projects-grid .project-card-body > .project-meta {
-  min-height: 0;
+  flex: 0 0 auto;
 }
 .projects-grid .project-card-body > h3 {
-  height: 3.75em;
-  min-height: 0;
-  overflow: hidden;
-  margin: .8rem 0;
+  flex: 0 0 auto;
+  overflow: visible;
 }
 .projects-grid .project-card-body > p {
-  height: 5.35em;
-  min-height: 0;
-  overflow: hidden;
-  margin: 0;
+  flex: 0 0 auto;
+  overflow: visible;
 }
 .projects-grid .project-card-body > .project-flow {
-  height: 2.2rem;
-  min-height: 2.2rem;
-  margin: 0;
-  padding: .55rem 0;
-  white-space: nowrap;
+  flex: 0 0 auto;
+  margin-top: .9rem;
+  margin-bottom: 0;
 }
 .projects-grid .project-card-body > .project-bottom {
-  align-self: end;
-  margin-top: 0;
-  padding-top: .75rem;
-}
-.projects-grid .project-card .project-bottom .tag-row {
-  flex-wrap: nowrap;
-  gap: .25rem;
-  padding-right: 0;
-}
-.projects-grid .project-card .project-bottom .tag-row span {
-  flex: 0 1 auto;
-  min-width: 0;
-  padding: .22rem .34rem;
-  font-size: .55rem;
-  white-space: nowrap;
-}
-.projects-grid .project-card .project-bottom .round-link {
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
-  margin-left: .1rem;
-}
-.projects-grid .project-card .project-bottom .round-link svg {
-  width: .85rem;
-  height: .85rem;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto 5em 6.4em 2.2rem auto;
-  }
-  .projects-grid .project-card-body > h3 { height: 5em; }
-  .projects-grid .project-card-body > p { height: 6.4em; }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto auto auto 2.2rem auto;
-  }
-  .projects-grid .project-card-body > h3,
-  .projects-grid .project-card-body > p {
-    height: auto;
-    overflow: visible;
-  }
-  .projects-grid .project-card-body > .project-flow {
-    white-space: normal;
-  }
-}
-
-
-/* Correct project card title/body collision with explicit, non-overlapping rows */
-.projects-grid .project-card-body {
-  display: grid;
-  grid-template-rows: auto 4.6rem 5.4rem 2.2rem auto;
-  align-content: start;
-}
-.projects-grid .project-card-body > h3 {
-  box-sizing: border-box;
-  height: auto;
-  min-height: 0;
-  margin: 0;
-  padding: .8rem 0;
-  line-height: 1.25;
-  overflow: hidden;
-}
-.projects-grid .project-card-body > p {
-  box-sizing: border-box;
-  height: auto;
-  min-height: 0;
-  margin: 0;
-  padding: .15rem 0 .55rem;
-  line-height: 1.6;
-  overflow: hidden;
-}
-.projects-grid .project-card-body > .project-flow {
-  align-self: stretch;
-  margin: 0;
-}
-.projects-grid .project-card-body > .project-bottom {
-  margin-top: 0;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto 5rem 6.4rem 2.2rem auto;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto auto auto 2.2rem auto;
-  }
-  .projects-grid .project-card-body > h3,
-  .projects-grid .project-card-body > p {
-    height: auto;
-    overflow: visible;
-  }
-}
-
-
-/* Project cards: restore comfortable vertical breathing room */
-.projects-grid .project-card-body {
-  grid-template-rows: auto 4.9rem 5.8rem 2.6rem auto;
-  row-gap: .15rem;
-  padding: 1.25rem 1.2rem 1.3rem;
-}
-.projects-grid .project-card-body > h3 {
-  padding: .95rem 0;
-  line-height: 1.3;
-}
-.projects-grid .project-card-body > p {
-  padding: .3rem 0 .75rem;
-  line-height: 1.65;
-}
-.projects-grid .project-card-body > .project-flow {
-  padding: .7rem 0;
-}
-.projects-grid .project-card-body > .project-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-top: auto;
   padding-top: 1rem;
 }
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto 5.2rem 6.8rem 2.6rem auto;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto auto auto 2.6rem auto;
-    row-gap: .3rem;
-  }
-  .projects-grid .project-card-body > h3 {
-    padding: .55rem 0 .7rem;
-  }
-  .projects-grid .project-card-body > p {
-    padding: .2rem 0 .65rem;
-  }
-}
-
-
-/* Requested project-card spacing: one line after title, two before process row */
-.projects-grid .project-card-body {
-  grid-template-rows: auto 6.2rem 9.1rem 2.6rem auto;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto 6.5rem 10.1rem 2.6rem auto;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto auto auto 2.6rem auto;
-  }
-  .projects-grid .project-card-body > h3 {
-    margin-bottom: 1.3rem;
-  }
-  .projects-grid .project-card-body > p {
-    margin-bottom: 3.3rem;
-  }
-}
-
-
-/* Rebalance project cards: align the process row without oversized blank areas */
-.projects-grid .project-card-body {
-  grid-template-rows: auto 5.5rem 4.8rem 2.6rem auto;
-  row-gap: .1rem;
-}
-.projects-grid .project-card-body > h3 {
-  padding: .65rem 0 .45rem;
-  line-height: 1.28;
-}
-.projects-grid .project-card-body > p {
-  padding: .15rem 0 .4rem;
-  line-height: 1.55;
-}
-.projects-grid .project-card-body > .project-flow {
-  padding: .55rem 0;
-}
-.projects-grid .project-card-body > .project-bottom {
-  padding-top: .8rem;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto 5.5rem 5.2rem 2.6rem auto;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body {
-    grid-template-rows: auto auto auto 2.6rem auto;
-  }
-  .projects-grid .project-card-body > h3 {
-    margin-bottom: .5rem;
-  }
-  .projects-grid .project-card-body > p {
-    margin-bottom: .8rem;
-  }
-}
-
-
-/* Project cards: use natural content flow instead of fixed rows that clip text */
-.projects-grid > .reveal,
-.projects-grid > .reveal > .project-card {
-  min-height: 0;
-}
-.projects-grid > .reveal > .project-card {
-  height: 100%;
-}
-.projects-grid .project-card-body {
-  display: flex;
+.projects-grid .project-card-body > .project-bottom > .tag-row {
   flex: 1 1 auto;
-  flex-direction: column;
-  min-height: 0;
-  padding: 1.15rem 1.2rem 1.25rem;
-  gap: 0;
+  justify-content: flex-start;
+  min-width: 0;
+  gap: .3rem;
+  margin-right: auto;
+  padding: 0;
 }
-.projects-grid .project-card-body > h3 {
-  height: auto;
-  min-height: 4.8rem;
-  margin: 0;
-  padding: .55rem 0 .65rem;
-  overflow: visible;
-  line-height: 1.28;
-}
-.projects-grid .project-card-body > p {
-  height: auto;
-  min-height: 5.8rem;
-  margin: 0;
-  padding: .2rem 0 .55rem;
-  overflow: visible;
-  line-height: 1.55;
-}
-.projects-grid .project-card-body > .project-flow {
+.projects-grid .project-card-body > .project-bottom > .round-link {
   flex: 0 0 auto;
-  height: auto;
-  min-height: 2.35rem;
-  margin: .15rem 0 0;
-  padding: .55rem 0;
-  white-space: nowrap;
-}
-.projects-grid .project-card-body > .project-bottom {
-  margin-top: auto;
-  padding-top: .8rem;
-}
-@media (max-width: 900px) and (min-width: 641px) {
-  .projects-grid .project-card-body > h3 { min-height: 5.1rem; }
-  .projects-grid .project-card-body > p { min-height: 5.8rem; }
+  margin-left: auto;
 }
 @media (max-width: 640px) {
-  .projects-grid .project-card-body > h3,
-  .projects-grid .project-card-body > p {
-    min-height: 0;
-  }
-  .projects-grid .project-card-body > h3 {
-    padding: .55rem 0 .45rem;
-  }
-  .projects-grid .project-card-body > p {
-    padding: .2rem 0 .6rem;
-  }
   .projects-grid .project-card-body > .project-flow {
     white-space: normal;
   }
-}
-
-
-/* Keep project technology tags grouped on the right, immediately before the arrow */
-.projects-grid .project-card-body > .project-bottom {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: .55rem;
-}
-.projects-grid .project-card-body > .project-bottom > .tag-row {
-  display: flex;
-  flex: 0 1 auto;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  min-width: 0;
-  gap: .3rem;
-  padding: 0;
-}
-.projects-grid .project-card-body > .project-bottom > .tag-row span {
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-.projects-grid .project-card-body > .project-bottom > .round-link {
-  flex: 0 0 32px;
-  margin: 0;
-}
-@media (max-width: 640px) {
-  .projects-grid .project-card-body > .project-bottom {
-    justify-content: flex-end;
-  }
-}
-
-
-/* Project card actions: skills stay left, arrow stays at the far right */
-.projects-grid .project-card-body > .project-bottom {
-  justify-content: space-between;
-}
-.projects-grid .project-card-body > .project-bottom > .tag-row {
-  justify-content: flex-start;
-  margin-right: auto;
-}
-.projects-grid .project-card-body > .project-bottom > .round-link {
-  margin-left: auto;
 }
