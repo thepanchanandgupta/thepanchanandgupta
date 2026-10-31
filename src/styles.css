@@ -2324,3 +2324,40 @@ footer {
     margin-bottom: 3.3rem;
   }
 }
+
+
+/* Rebalance project cards: align the process row without oversized blank areas */
+.projects-grid .project-card-body {
+  grid-template-rows: auto 5.5rem 4.8rem 2.6rem auto;
+  row-gap: .1rem;
+}
+.projects-grid .project-card-body > h3 {
+  padding: .65rem 0 .45rem;
+  line-height: 1.28;
+}
+.projects-grid .project-card-body > p {
+  padding: .15rem 0 .4rem;
+  line-height: 1.55;
+}
+.projects-grid .project-card-body > .project-flow {
+  padding: .55rem 0;
+}
+.projects-grid .project-card-body > .project-bottom {
+  padding-top: .8rem;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto 5.5rem 5.2rem 2.6rem auto;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto auto auto 2.6rem auto;
+  }
+  .projects-grid .project-card-body > h3 {
+    margin-bottom: .5rem;
+  }
+  .projects-grid .project-card-body > p {
+    margin-bottom: .8rem;
+  }
+}
