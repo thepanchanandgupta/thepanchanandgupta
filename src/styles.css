@@ -2138,3 +2138,80 @@ footer {
     min-height: 0;
   }
 }
+
+
+/* Project card final alignment: lock the content rows to shared heights */
+.projects-grid .project-card-body {
+  display: grid;
+  grid-template-rows: auto 3.75em 5.35em 2.2rem auto;
+  align-content: stretch;
+}
+.projects-grid .project-card-body > .project-meta {
+  min-height: 0;
+}
+.projects-grid .project-card-body > h3 {
+  height: 3.75em;
+  min-height: 0;
+  overflow: hidden;
+  margin: .8rem 0;
+}
+.projects-grid .project-card-body > p {
+  height: 5.35em;
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+.projects-grid .project-card-body > .project-flow {
+  height: 2.2rem;
+  min-height: 2.2rem;
+  margin: 0;
+  padding: .55rem 0;
+  white-space: nowrap;
+}
+.projects-grid .project-card-body > .project-bottom {
+  align-self: end;
+  margin-top: 0;
+  padding-top: .75rem;
+}
+.projects-grid .project-card .project-bottom .tag-row {
+  flex-wrap: nowrap;
+  gap: .25rem;
+  padding-right: 0;
+}
+.projects-grid .project-card .project-bottom .tag-row span {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding: .22rem .34rem;
+  font-size: .55rem;
+  white-space: nowrap;
+}
+.projects-grid .project-card .project-bottom .round-link {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  margin-left: .1rem;
+}
+.projects-grid .project-card .project-bottom .round-link svg {
+  width: .85rem;
+  height: .85rem;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto 5em 6.4em 2.2rem auto;
+  }
+  .projects-grid .project-card-body > h3 { height: 5em; }
+  .projects-grid .project-card-body > p { height: 6.4em; }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto auto auto 2.2rem auto;
+  }
+  .projects-grid .project-card-body > h3,
+  .projects-grid .project-card-body > p {
+    height: auto;
+    overflow: visible;
+  }
+  .projects-grid .project-card-body > .project-flow {
+    white-space: normal;
+  }
+}
