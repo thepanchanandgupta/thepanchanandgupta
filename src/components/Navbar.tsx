@@ -89,7 +89,7 @@ export function Navbar() {
         <div className="nav-actions">
           <a className="icon-link" href={safeHref(profile.linkedin)} target="_blank" rel="noreferrer" aria-label="LinkedIn professional profile"><Linkedin /></a>
           <a className="icon-link technical-link" href={safeHref(profile.github)} target="_blank" rel="noreferrer" aria-label="GitHub technical work"><Github /></a>
-          <a className="resume-link" href={profile.resume}>Resume</a>
+          <a className="resume-link" href={profile.resume} target="_blank" rel="noopener noreferrer">Resume</a>
           <Button variant="icon" className="menu-trigger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X /> : <Menu />}
           </Button>
@@ -105,7 +105,7 @@ export function Navbar() {
             <div className="mobile-social">
               <a href={safeHref(profile.linkedin)} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
               <a href={safeHref(profile.github)} target="_blank" rel="noreferrer"><Github /> GitHub</a>
-              <a href={profile.resume}>Resume</a>
+              <a href={profile.resume} target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
           </div>
         )}
