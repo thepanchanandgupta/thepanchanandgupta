@@ -2426,3 +2426,34 @@ footer {
     white-space: normal;
   }
 }
+
+
+/* Keep project technology tags grouped on the right, immediately before the arrow */
+.projects-grid .project-card-body > .project-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .55rem;
+}
+.projects-grid .project-card-body > .project-bottom > .tag-row {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  min-width: 0;
+  gap: .3rem;
+  padding: 0;
+}
+.projects-grid .project-card-body > .project-bottom > .tag-row span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.projects-grid .project-card-body > .project-bottom > .round-link {
+  flex: 0 0 32px;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body > .project-bottom {
+    justify-content: flex-end;
+  }
+}
