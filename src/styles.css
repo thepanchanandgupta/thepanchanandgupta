@@ -2109,3 +2109,32 @@ footer {
     min-height: 0;
   }
 }
+
+
+/* Fine-tune project card alignment: process rows and technology actions */
+.projects-grid .project-card p {
+  min-height: 5.35em;
+}
+.projects-grid .project-card .project-bottom {
+  gap: .65rem;
+}
+.projects-grid .project-card .project-bottom .tag-row {
+  flex: 1 1 0;
+  min-width: 0;
+  gap: .35rem;
+  padding-right: .2rem;
+}
+.projects-grid .project-card .project-bottom .round-link {
+  flex: 0 0 42px;
+  margin-left: .15rem;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card p {
+    min-height: 6.4em;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card p {
+    min-height: 0;
+  }
+}
