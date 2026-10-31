@@ -2263,3 +2263,42 @@ footer {
     overflow: visible;
   }
 }
+
+
+/* Project cards: restore comfortable vertical breathing room */
+.projects-grid .project-card-body {
+  grid-template-rows: auto 4.9rem 5.8rem 2.6rem auto;
+  row-gap: .15rem;
+  padding: 1.25rem 1.2rem 1.3rem;
+}
+.projects-grid .project-card-body > h3 {
+  padding: .95rem 0;
+  line-height: 1.3;
+}
+.projects-grid .project-card-body > p {
+  padding: .3rem 0 .75rem;
+  line-height: 1.65;
+}
+.projects-grid .project-card-body > .project-flow {
+  padding: .7rem 0;
+}
+.projects-grid .project-card-body > .project-bottom {
+  padding-top: 1rem;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto 5.2rem 6.8rem 2.6rem auto;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid .project-card-body {
+    grid-template-rows: auto auto auto 2.6rem auto;
+    row-gap: .3rem;
+  }
+  .projects-grid .project-card-body > h3 {
+    padding: .55rem 0 .7rem;
+  }
+  .projects-grid .project-card-body > p {
+    padding: .2rem 0 .65rem;
+  }
+}
