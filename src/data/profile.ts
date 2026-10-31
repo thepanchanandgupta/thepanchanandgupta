@@ -19,7 +19,7 @@ export const profile: Profile = {
   academicEmail: "panchanand.pgdm27g@greatlakes.edu.in",
   linkedin: "https://www.linkedin.com/in/thepanchanandgupta/",
   github: "https://github.com/thepanchanandgupta",
-  resume: "/resume.pdf",
+  resume: "/resume",
   highlights: [
     { value: "Technology", label: "Foundation", note: "Software and workflow thinking" },
     { value: "Finance", label: "Major", note: "Business and financial perspective" },
