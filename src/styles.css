@@ -2116,6 +2116,20 @@ footer {
   flex: 0 0 auto;
   margin-left: auto;
 }
+/* Compact footer: slightly smaller tags and arrow keep all three tag groups
+   on a single line, matching every card's footer height. */
+.projects-grid .project-card .tag-row span {
+  padding: .26rem .5rem;
+  font-size: .62rem;
+}
+.projects-grid .project-card .round-link {
+  width: 32px;
+  height: 32px;
+}
+.projects-grid .project-card .round-link svg {
+  width: .85rem;
+  height: .85rem;
+}
 /* Aligned process rows on desktop/tablet: titles and descriptions share a
    modest minimum (2 title lines / 4 description lines) so the flow row starts
    at the same position on every card without clipping or large blank areas. */
